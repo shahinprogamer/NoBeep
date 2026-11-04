@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="NoBeep — ৩,০০০ দিনের যাত্রা। প্রতিটি দিনের শরীরের উপকার, আধ্যাত্মিক শক্তি ও গর্বের কথা।">
+  <meta name="description" content="NoBeep — ৩,০০০ দিনের যাত্রা। শরীরের উপকার, আধ্যাত্মিক শক্তি, এবং ইচ্ছে হলে কী করব তার গাইড।">
   <meta property="og:title" content="NoBeep · ৩,০০০ দিনের যাত্রা">
   <meta property="og:description" content="প্রতিটি দিনের শরীরের উপকার, আধ্যাত্মিক শক্তি ও গর্বের কথা একসাথে।">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#eef4fb">
-  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22NoBeep%22%2C%22short_name%22%3A%22NoBeep%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23eef4fb%22%2C%22theme_color%22%3A%22%23eef4fb%22%7D">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <title>NoBeep · 3000 DAY</title>
+  <title>NoBeep · ৩,০০০ দিনের যাত্রা</title>
   <style>
     :root {
       --bg: #eef4fb;
@@ -53,6 +52,9 @@
       --back-bg: rgba(255,255,255,0.85);
       --back-border: #b4cde4;
       --back-hover: #e3eef9;
+      --warn-bg: #fff4e3;
+      --warn-border: #f2d9b8;
+      --warn-text: #8a5a1e;
     }
     html[data-theme="dark"] {
       --bg: #0f1722;
@@ -93,6 +95,9 @@
       --back-bg: rgba(30,46,66,0.85);
       --back-border: #3f6386;
       --back-hover: #24405f;
+      --warn-bg: #3a2e1a;
+      --warn-border: #5c4826;
+      --warn-text: #f0c78a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; }
@@ -159,7 +164,7 @@
       width: 8px; height: 8px; background: var(--accent);
       border-radius: 50%; margin-left: 4px; margin-top: 4px; opacity: 0.9;
     }
-    .top-actions { display: flex; align-items: center; gap: 0.5rem; }
+    .top-actions { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
     .icon-btn {
       display: inline-flex; align-items: center; justify-content: center;
       width: 40px; height: 40px; border-radius: 50%;
@@ -168,6 +173,20 @@
       transition: all 0.15s ease;
     }
     .icon-btn:hover { background: var(--back-hover); transform: translateY(-1px); }
+    .nav-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.5rem 1rem; border-radius: 40px;
+      border: 1px solid var(--btn-border);
+      background: linear-gradient(135deg, var(--btn-bg-1), var(--btn-bg-2));
+      font-size: 0.82rem; font-weight: 700; color: var(--btn-text);
+      cursor: pointer; font-family: inherit; white-space: nowrap;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 12px -8px rgba(30,70,110,0.4);
+    }
+    .nav-link:hover {
+      background: linear-gradient(135deg, var(--btn-bg-hover-1), var(--btn-bg-hover-2));
+      transform: translateY(-1px);
+    }
 
     /* ---------- WELCOME VIEW ---------- */
     .welcome-hero {
@@ -210,7 +229,6 @@
       margin: 0.2rem auto 0.4rem;
     }
 
-    /* feature cards on welcome */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -229,7 +247,6 @@
     .feature .f-title { font-size: 0.82rem; font-weight: 700; color: var(--heading-soft); }
     .feature .f-sub { font-size: 0.72rem; color: var(--text-mute); margin-top: 0.15rem; }
 
-    /* input */
     .input-row {
       display: flex; gap: 0.6rem; flex-wrap: wrap;
       max-width: 560px; width: 100%; margin: 0 auto;
@@ -281,7 +298,6 @@
     }
     .quick-btn:hover { background: var(--back-hover); }
 
-    /* slider */
     .slider-wrap {
       max-width: 560px; width: 100%; margin: 0.6rem auto 0;
       display: flex; flex-direction: column; gap: 0.3rem;
@@ -414,6 +430,53 @@
       color: var(--text-mute); font-size: 0.95rem;
     }
 
+    /* ---------- GUIDE VIEW ---------- */
+    .guide-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: clamp(18px, 3vw, 26px);
+      padding: clamp(1rem, 2.5vw, 1.6rem);
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 26px -16px var(--card-shadow);
+    }
+    .guide-card h2 {
+      font-size: clamp(1.05rem, 2.6vw, 1.28rem);
+      font-weight: 750; line-height: 1.5;
+      color: var(--heading); margin-bottom: 0.8rem;
+    }
+    .guide-card p {
+      font-size: clamp(0.86rem, 2vw, 0.96rem);
+      line-height: 1.9; color: var(--text-soft);
+      margin-bottom: 0.8rem;
+    }
+    .guide-card p:last-child { margin-bottom: 0; }
+    .guide-list {
+      list-style: none; margin: 0.5rem 0 0.8rem;
+    }
+    .guide-list li {
+      font-size: clamp(0.86rem, 2vw, 0.95rem);
+      line-height: 1.75; color: var(--text-soft);
+      padding: 0.5rem 0 0.5rem 2rem; position: relative;
+      border-bottom: 1px dashed rgba(150,180,210,0.25);
+    }
+    .guide-list li:last-child { border-bottom: none; }
+    .guide-list li::before {
+      content: '✔'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .warn-box {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      color: var(--warn-text);
+      border-radius: 16px;
+      padding: clamp(0.75rem, 2vw, 1rem) clamp(0.85rem, 2vw, 1.15rem);
+      font-size: clamp(0.82rem, 1.9vw, 0.92rem);
+      line-height: 1.8;
+      margin: 0.8rem 0;
+    }
+    .warn-box strong { font-weight: 800; }
+
     /* scroll top */
     .scroll-top {
       position: fixed; right: 1.2rem; bottom: 1.2rem;
@@ -427,7 +490,6 @@
     .scroll-top.show { display: flex; }
     .scroll-top:hover { transform: translateY(-2px); background: var(--back-hover); }
 
-    /* toast */
     .toast {
       position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%) translateY(20px);
       background: var(--heading-soft); color: #fff;
@@ -441,6 +503,8 @@
     @media (max-width: 620px) {
       .app { border-radius: 26px; gap: 0.8rem; }
       .features { grid-template-columns: 1fr 1fr; }
+      .top { flex-direction: column; align-items: flex-start; }
+      .top-actions { width: 100%; justify-content: space-between; }
     }
     @media (max-width: 420px) {
       .input-row button { flex: 1 1 auto; }
@@ -461,8 +525,9 @@
     <!-- ============ VIEW 1: WELCOME ============ -->
     <div class="view active" id="viewWelcome">
       <div class="top">
-        <div class="logo">NoBeep<span class="dot"></span></div>
+        <div class="logo">nobeep<span class="dot"></span></div>
         <div class="top-actions">
+          <button class="nav-link" id="guideNavBtn">🧭 ইচ্ছে হলে কী করব?</button>
           <button class="icon-btn" id="themeToggle" aria-label="থিম পরিবর্তন" title="ডার্ক/লাইট মোড">🌙</button>
         </div>
       </div>
@@ -493,6 +558,10 @@
             <div class="f-title">আধ্যাত্মিক শক্তি</div>
             <div class="f-sub">আত্মবিশ্বাস বাড়ায়</div>
           </div>
+        </div>
+
+        <div style="margin-top: 0.6rem; display:flex; justify-content:center;">
+          <button class="quick-btn" id="guideHeroBtn" style="font-size:0.88rem; padding:0.55rem 1.2rem;">🧭 ইচ্ছে হলে কী করব? — গাইড দেখুন</button>
         </div>
       </div>
 
@@ -535,6 +604,67 @@
       </div>
     </div>
 
+    <!-- ============ VIEW 3: GUIDE ============ -->
+    <div class="view" id="viewGuide">
+      <div class="detail-top">
+        <button class="back-btn" id="guideBackBtn">← ফিরে যাও</button>
+        <span class="detail-title-small">ইচ্ছে হলে কী করব?</span>
+      </div>
+
+      <div class="result-scroll" id="guideScroll">
+        <div class="guide-card">
+          <h2>🧭 ইচ্ছে হলে কী করব? — নিজেকে রক্ষার গাইড</h2>
+          <p>
+            হঠাৎ করে ইচ্ছে আসা স্বাভাবিক — এটি শরীর ও মনের একটি সংকেত, কোনো ব্যর্থতা নয়। গুরুত্বপূর্ণ হলো সেই মুহূর্তে তুমি কী করো। নিচের বিষয়গুলো মনে রাখলে তুমি নিজেকে রক্ষা করতে পারবে এবং স্ট্রিক ধরে রাখতে পারবে।
+          </p>
+
+          <div class="section-title">✦ গুরুত্বপূর্ণ কথাগুলো (মুখস্থ করে ফেলো)</div>
+          <ul class="guide-list">
+            <li><strong>ইচ্ছে আসা মানে ব্যর্থতা নয়</strong> — এটি মাত্র ৫–১৫ মিনিটের একটি ঢেউ; তুমি শুধু সেই ঢেউটা পার হলে নিজের উপর জয় পাবে।</li>
+            <li><strong>প্রথম ৫ মিনিটই সবচেয়ে কঠিন</strong> — তখনই সবচেয়ে বেশি সাহস দরকার। এই ৫ মিনিট পার হলেই ইচ্ছে নিজে থেকেই কমে যায়।</li>
+            <li><strong>ট্রিগার চিনে রাখো</strong> — একা থাকা, রাত, ফোন, ক্লান্তি — কোন পরিস্থিতিতে ইচ্ছে আসে সেটি লিখে রাখো।</li>
+            <li><strong>ফোন দূরে রাখো</strong> — ইচ্ছে আসার সাথে সাথে ফোনটা অন্য রুমে বা দূরে রেখে দাও; এটি সবচেয়ে কার্যকর প্রতিরোধ।</li>
+            <li><strong>নিজেকে বকা দিও না</strong> — নিজের সাথে কথা বলো বন্ধুর মতো, শত্রুর মতো নয়।</li>
+            <li><strong>একা থাকো না</strong> — সম্ভব হলে কারো সাথে কথা বলো, বাইরে বের হও, বা এমন কিছু করো যাতে মন ব্যস্ত থাকে।</li>
+            <li><strong>তাড়াহুড়ো করো না</strong> — "এখনই করতে হবে" এই চাপটা মিথ্যা; তুমি ১০ মিনিট অপেক্ষা করলেই দেখবে ইচ্ছে কমে গেছে।</li>
+            <li><strong>ভবিষ্যতের নিজেকে মনে করো</strong> — ১০ মিনিটের আনন্দের জন্য ৩০০০ দিনের গর্ব নষ্ট করো না।</li>
+          </ul>
+
+          <div class="section-title">✦ ইচ্ছে আসার সাথে সাথে যা করবে (ধাপে ধাপে)</div>
+          <ul class="guide-list">
+            <li><strong>থামো</strong> — হাতের কাজ থামাও, গভীর শ্বাস নাও (৪ সেকেন্ড শ্বাস নাও, ৪ সেকেন্ড ধরে রাখো, ৪ সেকেন্ড ছাড়ো)।</li>
+            <li><strong>স্থান পরিবর্তন করো</strong> — যে ঘরে বা যে জায়গায় বসে আছ, সেখান থেকে উঠে অন্য জায়গায় যাও।</li>
+            <li><strong>শরীরকে না বলো</strong> — ঠান্ডা পানি দিয়ে মুখ ধোও, হাত-পা ধোও; শরীর ঠান্ডা হলে ইচ্ছে কমে যায়।</li>
+            <li><strong>৫ মিনিটের টাইমার দাও</strong> — নিজেকে বলো "আমি ৫ মিনিট অপেক্ষা করব, তারপর সিদ্ধান্ত নেব।"</li>
+            <li><strong>নিজেকে ব্যস্ত রাখো</strong> — দ্রুত কিছু করো: হাঁটা, পুশ-আপ, বই পড়া, গান শোনা, রান্না, পরিচ্ছন্নতা।</li>
+            <li><strong>কারো সাথে কথা বলো</strong> — বন্ধু, পরিবারের সদস্য, বা কাউকে ফোন করো; একা থাকা সবচেয়ে বিপজ্জনক।</li>
+            <li><strong>মনে করো কেন শুরু করেছ</strong> — তোমার ৩,০০০ দিনের লক্ষ্য, তোমার শারীরিক ও আত্মিক উপকারগুলো মনে করো।</li>
+            <li><strong>পানি পান করো</strong> — শরীর হাইড্রেটেড থাকলে মনের চঞ্চলতা কমে।</li>
+          </ul>
+
+          <div class="section-title">✦ নিজেকে রক্ষা করার দীর্ঘমেয়াদী অভ্যাস</div>
+          <ul class="guide-list">
+            <li><strong>প্রতিদিন নির্দিষ্ট সময়ে ঘুমাও ও ওঠো</strong> — শরীরের ছন্দ ঠিক থাকলে ইচ্ছে কম আসে।</li>
+            <li><strong>নিয়মিত ব্যায়াম করো</strong> — সপ্তাহে অন্তত ৩ দিন, ৩০ মিনিট।</li>
+            <li><strong>রাতে ফোন বিছানায় নিও না</strong> — সবচেয়ে বড় ট্রিগার এড়ানোর সহজ উপায়।</li>
+            <li><strong>নিজের জন্য লক্ষ্য রাখো</strong> — পড়াশোনা, কাজ, শরীরচর্চা — যা মনকে ব্যস্ত ও আনন্দিত রাখে।</li>
+            <li><strong>সোশ্যাল মিডিয়া কমাও</strong> — অপ্রয়োজনীয় ট্রিগার এড়াতে।</li>
+            <li><strong>প্রতিদিন ডায়েরি লেখো</strong> — কী করলে ভালো লাগল, কী করলে ইচ্ছে আসে, সেটি লিখে রাখো।</li>
+            <li><strong>নিজেকে পুরস্কৃত করো</strong> — ছোট ছোট অর্জনে নিজেকে ভালো কিছু দাও।</li>
+            <li><strong>প্রয়োজনে সাহায্য নাও</strong> — যদি বারবার নিজেকে নিয়ন্ত্রণ করতে না পারো, তাহলে কোনো কাউন্সেলর বা চিকিৎসকের সাথে কথা বলো।</li>
+          </ul>
+
+          <div class="warn-box">
+            <strong>⚠️ জরুরি কথা:</strong> এই পেজটি সাধারণ পরামর্শ; এটি চিকিৎসা বা মনোবিজ্ঞানের বিকল্প নয়। যদি তুমি দীর্ঘদিন ধরে মানসিক চাপ, বিষণ্নতা বা নিজেকে নিয়ন্ত্রণ করতে না পারার সমস্যায় ভুগছ, তাহলে অবশ্যই একজন বিশেষজ্ঞ বা চিকিৎসকের সাথে কথা বলো।
+          </div>
+
+          <p>
+            মনে রেখো — প্রতিটি ইচ্ছে আসা মানে একটি পরীক্ষা, আর প্রতিটি পরীক্ষা পার হওয়া মানে তুমি আরও শক্তিশালী হচ্ছো। যতবার ইচ্ছে আসে আর তুমি তা সামলে নাও, ততবার তোমার আত্মবিশ্বাস একধাপ বাড়ে। এই জায়গাটিই তোমাকে ৩,০০০ দিনের যাত্রায় সাহায্য করবে।
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="উপরে যান">↑</button>
@@ -566,35 +696,46 @@
     // ---------- রাউটার ----------
     const viewWelcome = document.getElementById('viewWelcome');
     const viewDetail  = document.getElementById('viewDetail');
+    const viewGuide   = document.getElementById('viewGuide');
     const resultArea   = document.getElementById('resultArea');
     const resultScroll = document.getElementById('resultScroll');
+    const guideScroll  = document.getElementById('guideScroll');
     const detailTitleSmall = document.getElementById('detailTitleSmall');
 
     function showView(name) {
+      viewWelcome.classList.remove('active');
+      viewDetail.classList.remove('active');
+      viewGuide.classList.remove('active');
+      document.getElementById('scrollTopBtn').classList.remove('show');
+
       if (name === 'detail') {
-        viewWelcome.classList.remove('active');
         viewDetail.classList.add('active');
-        document.getElementById('scrollTopBtn').classList.remove('show');
+      } else if (name === 'guide') {
+        viewGuide.classList.add('active');
+        if (guideScroll) guideScroll.scrollTop = 0;
       } else {
-        viewDetail.classList.remove('active');
         viewWelcome.classList.add('active');
-        document.getElementById('scrollTopBtn').classList.remove('show');
       }
     }
 
     const MAX_DAY = 3000;
 
-    function parseDayFromHash() {
+    function parseHash() {
       const h = window.location.hash || '';
-      const m = h.match(/day=(\d+)/);
-      if (!m) return null;
-      const d = parseInt(m[1], 10);
-      if (isNaN(d) || d < 0 || d > MAX_DAY) return null;
-      return d;
+      const dayMatch = h.match(/day=(\d+)/);
+      if (dayMatch) {
+        const d = parseInt(dayMatch[1], 10);
+        if (!isNaN(d) && d >= 0 && d <= MAX_DAY) return { view: 'detail', day: d };
+      }
+      if (h.indexOf('guide') !== -1) return { view: 'guide' };
+      return { view: 'welcome' };
     }
 
     function navigateToDay(day) {
       window.location.hash = `#day=${day}`;
+    }
+    function navigateToGuide() {
+      window.location.hash = `#guide`;
     }
 
     // ---------- কনটেন্ট জেনারেটর ----------
@@ -611,7 +752,7 @@
       return parts.join(' ');
     }
 
-    // হাতে লেখা বিশেষ মাইলস্টোন (অনন্য)
+    // হাতে লেখা বিশেষ মাইলস্টোন
     const SPECIAL = {
       0:   { h1: "আজ তুমি সিদ্ধান্ত নিয়েছ — আর সিদ্ধান্ত নেওয়াই সবচেয়ে বড় সাহস। মুখে হাসি নিয়ে আয়নার দিকে তাকাও, কারণ আজ থেকে তুমি নিজের জীবনের নায়ক হওয়ার পথে প্রথম পা রাখলে।",
              h4: "আজকের এই দিনটি তোমার জীবনের সবচেয়ে গুরুত্বপূর্ণ দিনগুলোর একটি, কারণ আজ তুমি শুধু একটা সিদ্ধান্ত নিয়েছ — আর সেই সিদ্ধান্তটাই তোমাকে সাধারণ মানুষের ভিড় থেকে আলাদা করে দিয়েছে। পৃথিবীতে লক্ষ লক্ষ মানুষ প্রতিদিন \"কাল থেকে শুরু করব\" বলে নিজেকে ফাঁকি দেয়, কিন্তু তুমি আজ সেই দলে নেই। তুমি আজ প্রমাণ করে দিয়েছ যে তুমি শুধু স্বপ্ন দেখো না, তুমি সেই স্বপ্নকে বাস্তবে রূপ দিতে চাও। এই একটি দিনই তোমার ভবিষ্যতের সব দিনের ভিত্তি, কারণ যে মানুষ প্রথম পদক্ষেপ নিতে পারে, সে-ই শেষ পর্যন্ত পৌঁছাতে পারে। আজ আয়নার দিকে তাকিয়ে নিজের চোখে চোখ রাখো, আর মনে মনে বলো — \"আমি শুরু করেছি, আর আমি থামব না।\" এই কথাটা যতবার বলবে, ততবার তোমার বুকের ভেতর একটা আগুন জ্বলে উঠবে, যা কোনো বাতাসেই নিভবে না। তোমার শরীরে এখনো কোনো পরিবর্তন আসেনি, কিন্তু তোমার মনের ভেতরে একটা নতুন আলো জ্বলেছে — সেই আলোই তোমাকে অন্ধকার থেকে বের করে আনবে। আজ রাতে ঘুমানোর আগে নিজের কাঁধে হাত রাখো আর গর্ব করে বলো, \"আজ আমি নিজের পক্ষে দাঁড়িয়েছি।\" এই গর্বটাই তোমার সবচেয়ে বড় পুরস্কার। মনে রেখো, পৃথিবীর সব মহান মানুষ একদিন ঠিক এইভাবেই প্রথম পদক্ষেপ নিয়েছিল — তারা যখন শুরু করেছিল, তখন কেউ তাদের চিনত না, কিন্তু তারা নিজের উপর বিশ্বাস রেখেছিল। তুমিও আজ সেই পথেই হাঁটতে শুরু করেছ, আর এই পথের শেষে তোমার জন্য অপেক্ষা করছে সেই মানুষটি — যাকে তুমি একদিন স্বপ্নে দেখেছিলে। মুখে একটা হাসি নিয়ে ঘুমিয়ে পড়ো, কারণ কাল সকালে তুমি আরও এক ধাপ এগিয়ে জেগে উঠবে।" },
@@ -786,12 +927,14 @@
 
     // ---------- রাউট ----------
     function handleRoute() {
-      const day = parseDayFromHash();
-      if (day === null) {
-        showView('welcome');
-      } else {
+      const route = parseHash();
+      if (route.view === 'detail') {
         showView('detail');
-        renderDay(day);
+        renderDay(route.day);
+      } else if (route.view === 'guide') {
+        showView('guide');
+      } else {
+        showView('welcome');
       }
     }
     window.addEventListener('hashchange', handleRoute);
@@ -808,6 +951,9 @@
     const printBtn = document.getElementById('printBtn');
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     const toastEl = document.getElementById('toast');
+    const guideNavBtn = document.getElementById('guideNavBtn');
+    const guideHeroBtn = document.getElementById('guideHeroBtn');
+    const guideBackBtn = document.getElementById('guideBackBtn');
 
     function showToast(msg) {
       toastEl.textContent = msg;
@@ -848,7 +994,7 @@
 
     backBtn.addEventListener('click', () => { window.location.hash = ''; });
 
-    // "আজকের দিন" — localStorage থেকে স্ট্রিক স্টার্ট নেয়
+    // "আজকের দিন"
     todayBtn.addEventListener('click', () => {
       let start = localStorage.getItem('nobeep_streak_start');
       if (!start) {
@@ -863,7 +1009,7 @@
       navigateToDay(d);
     });
 
-    // মাইলস্টোন লিস্ট (প্রথম কয়েকটি)
+    // মাইলস্টোন
     const MILESTONES = [0, 1, 3, 7, 9, 18, 27, 30, 45, 60, 90, 180, 365, 730, 1095, 1825, 2249, 3000];
     milestoneBtn.addEventListener('click', () => {
       const d = MILESTONES[Math.floor(Math.random() * MILESTONES.length)];
@@ -875,7 +1021,10 @@
 
     // শেয়ার
     shareBtn.addEventListener('click', async () => {
-      const day = parseDayFromHash();
+      const day = (function(){
+        const m = (window.location.hash||'').match(/day=(\d+)/);
+        return m ? parseInt(m[1],10) : null;
+      })();
       if (day === null) return;
       const url = window.location.href;
       const title = `NoBeep — দিন ${day}`;
@@ -892,27 +1041,30 @@
       }
     });
 
-    // প্রিন্ট
     printBtn.addEventListener('click', () => { window.print(); });
 
-    // scroll top
+    // scroll top (detail)
     resultScroll.addEventListener('scroll', () => {
       if (resultScroll.scrollTop > 200) scrollTopBtn.classList.add('show');
       else scrollTopBtn.classList.remove('show');
     });
     scrollTopBtn.addEventListener('click', () => {
-      resultScroll.scrollTo({ top: 0, behavior: 'smooth' });
+      if (viewDetail.classList.contains('active')) {
+        resultScroll.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (viewGuide.classList.contains('active')) {
+        guideScroll.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+    // guide scroll top too
+    guideScroll.addEventListener('scroll', () => {
+      if (guideScroll.scrollTop > 200) scrollTopBtn.classList.add('show');
+      else scrollTopBtn.classList.remove('show');
     });
 
-    // PWA — service worker রেজিস্ট্রেশন (মিনিমাল)
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        const sw = `self.addEventListener('install',e=>{self.skipWaiting();});self.addEventListener('activate',e=>{self.clients.claim();});self.addEventListener('fetch',e=>{});`;
-        const blob = new Blob([sw], { type: 'text/javascript' });
-        const url = URL.createObjectURL(blob);
-        navigator.serviceWorker.register(url).catch(() => {});
-      });
-    }
+    // guide navigation
+    guideNavBtn.addEventListener('click', navigateToGuide);
+    guideHeroBtn.addEventListener('click', navigateToGuide);
+    guideBackBtn.addEventListener('click', () => { window.location.hash = ''; });
 
     // initial route
     handleRoute();
