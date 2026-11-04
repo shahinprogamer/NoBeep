@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="NoBeep — ৩,০০০ দিনের যাত্রা। প্রতিটি দিনের শরীরের উপকার, আধ্যাত্মিক শক্তি ও গর্বের কথা।">
+  <meta property="og:title" content="NoBeep · ৩,০০০ দিনের যাত্রা">
+  <meta property="og:description" content="প্রতিটি দিনের শরীরের উপকার, আধ্যাত্মিক শক্তি ও গর্বের কথা একসাথে।">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#eef4fb">
+  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22NoBeep%22%2C%22short_name%22%3A%22NoBeep%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23eef4fb%22%2C%22theme_color%22%3A%22%23eef4fb%22%7D">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>NoBeep · 3000 DAY</title>
+  <style>
+    :root {
+      --bg: #eef4fb;
+      --bg-grad-1: rgba(190,220,250,0.55);
+      --bg-grad-2: rgba(210,235,255,0.55);
+      --bg-grad-3: rgba(245,250,255,0.4);
+      --app-bg: rgba(255,255,255,0.62);
+      --app-border: rgba(255,255,255,0.85);
+      --app-shadow: rgba(20,45,80,0.22);
+      --text: #1e2b3c;
+      --text-soft: #3c5f83;
+      --text-mute: #6d8aa8;
+      --heading: #0f2a44;
+      --heading-soft: #122c45;
+      --accent: #2f6fa8;
+      --accent-2: #5aa0d4;
+      --input-bg: rgba(255,255,255,0.92);
+      --input-border: #c7d9ea;
+      --input-focus: #6fa8d6;
+      --btn-bg-1: #e3eef9;
+      --btn-bg-2: #d3e5f6;
+      --btn-bg-hover-1: #d6e7f7;
+      --btn-bg-hover-2: #c4dcf1;
+      --btn-border: #9dc3e0;
+      --btn-text: #14365a;
+      --card-bg: rgba(255,255,255,0.82);
+      --card-border: rgba(255,255,255,0.95);
+      --card-shadow: rgba(25,55,90,0.18);
+      --spiritual-bg-1: rgba(232,244,255,0.85);
+      --spiritual-bg-2: rgba(244,250,255,0.8);
+      --spiritual-border: rgba(190,215,240,0.7);
+      --badge-bg: #dff0e8;
+      --badge-text: #1e6b4a;
+      --badge-border: #b8e0cc;
+      --scrollbar: #b8cee2;
+      --top-border: rgba(170,195,220,0.35);
+      --section-title: #4d6f92;
+      --back-bg: rgba(255,255,255,0.85);
+      --back-border: #b4cde4;
+      --back-hover: #e3eef9;
+    }
+    html[data-theme="dark"] {
+      --bg: #0f1722;
+      --bg-grad-1: rgba(30,60,100,0.45);
+      --bg-grad-2: rgba(40,70,110,0.45);
+      --bg-grad-3: rgba(15,30,50,0.5);
+      --app-bg: rgba(22,34,50,0.7);
+      --app-border: rgba(80,110,150,0.35);
+      --app-shadow: rgba(0,0,0,0.5);
+      --text: #d6e3f0;
+      --text-soft: #a9c2da;
+      --text-mute: #7d99b5;
+      --heading: #e8f1fa;
+      --heading-soft: #dce9f6;
+      --accent: #6fb0e0;
+      --accent-2: #8fc8f0;
+      --input-bg: rgba(30,46,66,0.9);
+      --input-border: #3a5570;
+      --input-focus: #6fa8d6;
+      --btn-bg-1: #24405f;
+      --btn-bg-2: #1c334d;
+      --btn-bg-hover-1: #2b4a6e;
+      --btn-bg-hover-2: #223b58;
+      --btn-border: #3f6386;
+      --btn-text: #d6e8fb;
+      --card-bg: rgba(28,44,64,0.85);
+      --card-border: rgba(70,100,140,0.4);
+      --card-shadow: rgba(0,0,0,0.45);
+      --spiritual-bg-1: rgba(28,48,72,0.85);
+      --spiritual-bg-2: rgba(22,38,58,0.8);
+      --spiritual-border: rgba(70,100,140,0.5);
+      --badge-bg: #1d3a2e;
+      --badge-text: #8fe0b8;
+      --badge-border: #2e5c46;
+      --scrollbar: #3a5570;
+      --top-border: rgba(70,100,140,0.35);
+      --section-title: #8fb0d0;
+      --back-bg: rgba(30,46,66,0.85);
+      --back-border: #3f6386;
+      --back-hover: #24405f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      font-family: 'Noto Sans Bengali', 'Hind Siliguri', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      min-height: 100dvh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: clamp(0.5rem, 2vw, 2rem);
+      position: relative;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, var(--bg-grad-1) 0%, transparent 55%),
+        radial-gradient(circle at 90% 85%, var(--bg-grad-2) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, var(--bg-grad-3) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+      transition: background 0.3s ease;
+    }
+
+    .app {
+      position: relative; z-index: 1;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--app-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: clamp(24px, 4vw, 40px);
+      padding: clamp(1.1rem, 3vw, 2.4rem);
+      box-shadow: 0 24px 60px -24px var(--app-shadow), 0 0 0 1px var(--app-border) inset;
+      border: 1px solid var(--app-border);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 0;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .view { display: none; flex-direction: column; gap: 1rem; min-height: 0; }
+    .view.active { display: flex; }
+
+    /* ---------- header ---------- */
+    .top {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.6rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--top-border);
+    }
+    .logo {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      font-weight: 800; letter-spacing: -0.02em; color: var(--heading-soft);
+      display: flex; align-items: center;
+    }
+    .logo .dot {
+      width: 8px; height: 8px; background: var(--accent);
+      border-radius: 50%; margin-left: 4px; margin-top: 4px; opacity: 0.9;
+    }
+    .top-actions { display: flex; align-items: center; gap: 0.5rem; }
+    .icon-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--back-border); background: var(--back-bg);
+      color: var(--heading-soft); cursor: pointer; font-size: 1.1rem;
+      transition: all 0.15s ease;
+    }
+    .icon-btn:hover { background: var(--back-hover); transform: translateY(-1px); }
+
+    /* ---------- WELCOME VIEW ---------- */
+    .welcome-hero {
+      display: flex; flex-direction: column; gap: 1rem;
+      padding: clamp(0.8rem, 2.4vw, 1.6rem) 0 clamp(0.4rem, 1.6vw, 1rem);
+      text-align: center;
+      flex: 1 1 auto;
+      justify-content: center;
+    }
+    .welcome-badge {
+      align-self: center;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--accent);
+      font-size: clamp(0.7rem, 1.6vw, 0.8rem);
+      font-weight: 700; letter-spacing: 0.4px;
+      padding: 0.35rem 1rem; border-radius: 40px;
+      text-transform: uppercase;
+    }
+    .welcome-title {
+      font-size: clamp(1.6rem, 5.2vw, 2.6rem);
+      font-weight: 800; line-height: 1.25;
+      color: var(--heading); letter-spacing: -0.02em;
+      max-width: 24ch; margin: 0 auto;
+    }
+    .welcome-title .accent {
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+    }
+    .welcome-text {
+      font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+      line-height: 1.75; color: var(--text-soft);
+      max-width: 54ch; margin: 0 auto;
+      font-weight: 400;
+    }
+    .welcome-divider {
+      width: 54px; height: 3px; border-radius: 20px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      margin: 0.2rem auto 0.4rem;
+    }
+
+    /* feature cards on welcome */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.7rem;
+      max-width: 620px; margin: 1rem auto 0; width: 100%;
+    }
+    .feature {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 0.9rem 0.8rem;
+      text-align: center;
+      box-shadow: 0 6px 16px -12px var(--card-shadow);
+    }
+    .feature .f-ico { font-size: 1.4rem; display: block; margin-bottom: 0.3rem; }
+    .feature .f-title { font-size: 0.82rem; font-weight: 700; color: var(--heading-soft); }
+    .feature .f-sub { font-size: 0.72rem; color: var(--text-mute); margin-top: 0.15rem; }
+
+    /* input */
+    .input-row {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      max-width: 560px; width: 100%; margin: 0 auto;
+    }
+    .input-row input {
+      flex: 1 1 160px; min-width: 0;
+      padding: clamp(0.75rem, 1.9vw, 0.95rem) 1.15rem;
+      border-radius: 60px; border: 1px solid var(--input-border);
+      background: var(--input-bg);
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-family: inherit; color: var(--heading-soft); outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      text-align: center;
+    }
+    .input-row input:focus {
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 3px rgba(111,168,214,0.2);
+    }
+    .input-row button {
+      padding: clamp(0.75rem, 1.9vw, 0.95rem) 1.8rem;
+      border-radius: 60px; border: 1px solid var(--btn-border);
+      background: linear-gradient(135deg, var(--btn-bg-1), var(--btn-bg-2));
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-weight: 700; color: var(--btn-text);
+      cursor: pointer; font-family: inherit; white-space: nowrap;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 12px -8px rgba(30,70,110,0.4);
+    }
+    .input-row button:hover {
+      background: linear-gradient(135deg, var(--btn-bg-hover-1), var(--btn-bg-hover-2));
+      transform: translateY(-1px);
+    }
+    .input-row button:active { transform: translateY(0); }
+    .hint {
+      font-size: clamp(0.68rem, 1.5vw, 0.78rem);
+      color: var(--text-mute); text-align: center;
+      max-width: 480px; margin: 0.2rem auto 0;
+    }
+    .quick-actions {
+      display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;
+      margin-top: 0.3rem;
+    }
+    .quick-btn {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.45rem 0.95rem; border-radius: 40px;
+      border: 1px solid var(--back-border); background: var(--back-bg);
+      font-size: 0.8rem; font-weight: 600; color: var(--heading-soft);
+      cursor: pointer; font-family: inherit; transition: all 0.15s ease;
+    }
+    .quick-btn:hover { background: var(--back-hover); }
+
+    /* slider */
+    .slider-wrap {
+      max-width: 560px; width: 100%; margin: 0.6rem auto 0;
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .slider-wrap input[type="range"] {
+      width: 100%; -webkit-appearance: none; appearance: none;
+      height: 8px; border-radius: 20px; background: var(--input-border);
+      outline: none; cursor: pointer;
+    }
+    .slider-wrap input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 3px solid #fff; cursor: pointer;
+      box-shadow: 0 2px 6px rgba(30,70,110,0.35);
+    }
+    .slider-wrap input[type="range"]::-moz-range-thumb {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 3px solid #fff; cursor: pointer;
+      box-shadow: 0 2px 6px rgba(30,70,110,0.35);
+    }
+    .slider-meta {
+      display: flex; justify-content: space-between;
+      font-size: 0.72rem; color: var(--text-mute); font-weight: 600;
+    }
+
+    /* ---------- DETAIL VIEW ---------- */
+    .detail-top {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--top-border);
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 1.1rem; border-radius: 40px;
+      border: 1px solid var(--back-border); background: var(--back-bg);
+      font-size: 0.85rem; font-weight: 700; color: var(--heading-soft);
+      cursor: pointer; font-family: inherit; transition: all 0.15s ease;
+    }
+    .back-btn:hover { background: var(--back-hover); border-color: var(--accent); }
+    .detail-actions { display: flex; gap: 0.4rem; }
+    .detail-title-small {
+      font-size: 0.85rem; font-weight: 700; color: var(--text-mute);
+      letter-spacing: 0.3px;
+    }
+
+    .result-scroll {
+      overflow-y: auto; flex: 1 1 auto; min-height: 0;
+      padding-right: 2px;
+      scrollbar-width: thin; scrollbar-color: var(--scrollbar) transparent;
+    }
+    .result-scroll::-webkit-scrollbar { width: 6px; }
+    .result-scroll::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 20px; }
+
+    .exact-badge {
+      display: inline-block;
+      background: var(--badge-bg); color: var(--badge-text);
+      font-size: clamp(0.68rem, 1.5vw, 0.78rem);
+      font-weight: 700;
+      padding: 0.28rem 0.85rem; border-radius: 40px;
+      margin-bottom: 0.8rem; letter-spacing: 0.3px;
+      border: 1px solid var(--badge-border);
+    }
+    .day-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: clamp(18px, 3vw, 26px);
+      padding: clamp(1rem, 2.5vw, 1.6rem);
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 26px -16px var(--card-shadow);
+      animation: fadeUp 0.35s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .day-card .day-label {
+      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+      text-transform: uppercase; letter-spacing: 1.4px;
+      font-weight: 800; color: var(--text-mute); margin-bottom: 0.5rem;
+    }
+    .day-card h1 {
+      font-size: clamp(1.05rem, 2.8vw, 1.32rem);
+      font-weight: 700; line-height: 1.55;
+      color: var(--heading); margin-bottom: 0.9rem;
+      letter-spacing: -0.01em;
+    }
+    .day-card h4 {
+      font-size: clamp(0.86rem, 2vw, 0.96rem);
+      font-weight: 400; line-height: 1.9;
+      color: var(--text-soft); text-align: justify;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: clamp(0.72rem, 1.6vw, 0.82rem);
+      text-transform: uppercase; letter-spacing: 0.9px;
+      font-weight: 800; color: var(--section-title);
+      margin: 0.9rem 0 0.45rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .benefits { list-style: none; margin-bottom: 0.6rem; }
+    .benefits li {
+      font-size: clamp(0.84rem, 1.9vw, 0.94rem);
+      line-height: 1.7; color: var(--text-soft);
+      padding: 0.3rem 0 0.3rem 1.5rem; position: relative;
+    }
+    .benefits li::before {
+      content: '✦'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.8rem;
+    }
+    .spiritual {
+      background: linear-gradient(135deg, var(--spiritual-bg-1), var(--spiritual-bg-2));
+      border-radius: 16px;
+      padding: clamp(0.75rem, 2vw, 1rem) clamp(0.85rem, 2vw, 1.15rem);
+      font-size: clamp(0.84rem, 1.9vw, 0.94rem);
+      line-height: 1.85; color: var(--text-soft);
+      margin-top: 0.5rem;
+      border: 1px solid var(--spiritual-border);
+    }
+    .spiritual .sp-title {
+      font-weight: 800; color: var(--heading);
+      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 0.3rem;
+    }
+    .empty-state {
+      text-align: center; padding: 2rem 1rem;
+      color: var(--text-mute); font-size: 0.95rem;
+    }
+
+    /* scroll top */
+    .scroll-top {
+      position: fixed; right: 1.2rem; bottom: 1.2rem;
+      width: 46px; height: 46px; border-radius: 50%;
+      border: 1px solid var(--back-border); background: var(--back-bg);
+      color: var(--heading-soft); font-size: 1.2rem; cursor: pointer;
+      box-shadow: 0 6px 20px -8px rgba(20,45,80,0.4);
+      z-index: 5; display: none; align-items: center; justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .scroll-top.show { display: flex; }
+    .scroll-top:hover { transform: translateY(-2px); background: var(--back-hover); }
+
+    /* toast */
+    .toast {
+      position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%) translateY(20px);
+      background: var(--heading-soft); color: #fff;
+      padding: 0.6rem 1.2rem; border-radius: 40px;
+      font-size: 0.85rem; font-weight: 600;
+      opacity: 0; pointer-events: none; transition: all 0.3s ease;
+      z-index: 10; white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 620px) {
+      .app { border-radius: 26px; gap: 0.8rem; }
+      .features { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .input-row button { flex: 1 1 auto; }
+      .features { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body::before, .top, .detail-top, .scroll-top, .input-row, .hint, .quick-actions, .welcome-hero, .features, .slider-wrap { display: none !important; }
+      .app { box-shadow: none; background: #fff; }
+      .day-card { box-shadow: none; border: 1px solid #ccc; }
+    }
+    ::selection { background: #c7ddec; color: #112433; }
+    html[data-theme="dark"] ::selection { background: #2f5a80; color: #eaf3fc; }
+  </style>
+</head>
+<body>
+  <div class="app" id="app">
+
+    <!-- ============ VIEW 1: WELCOME ============ -->
+    <div class="view active" id="viewWelcome">
+      <div class="top">
+        <div class="logo">NoBeep<span class="dot"></span></div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="থিম পরিবর্তন" title="ডার্ক/লাইট মোড">🌙</button>
+        </div>
+      </div>
+
+      <div class="welcome-hero">
+        <span class="welcome-badge">✦ ৩,০০০ দিনের যাত্রা ✦</span>
+        <h1 class="welcome-title">
+          নিজের শরীর ও আত্মার <span class="accent">নতুন অধ্যায়</span>
+        </h1>
+        <div class="welcome-divider"></div>
+        <p class="welcome-text">
+          এই যাত্রায় তুমি নিজেকে নতুন করে চিনবে। প্রতিটি দিনে শরীরের উপকার, আত্মার শক্তি আর গর্বের কথা একসাথে পাবে। নিচে দিন সংখ্যা লিখে "দেখাও" বাটনে ক্লিক করো — সেই দিনের সম্পূর্ণ তথ্য নতুন পেজে খুলে যাবে।
+        </p>
+
+        <div class="features">
+          <div class="feature">
+            <span class="f-ico">✦</span>
+            <div class="f-title">৩,০০০ দিন</div>
+            <div class="f-sub">প্রতিটি দিন আলাদা</div>
+          </div>
+          <div class="feature">
+            <span class="f-ico">🩺</span>
+            <div class="f-title">শরীরের উপকার</div>
+            <div class="f-sub">প্রতিদিনের পরিবর্তন</div>
+          </div>
+          <div class="feature">
+            <span class="f-ico">🕊️</span>
+            <div class="f-title">আধ্যাত্মিক শক্তি</div>
+            <div class="f-sub">আত্মবিশ্বাস বাড়ায়</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-wrap">
+        <input type="range" id="daySlider" min="0" max="3000" value="0" step="1" aria-label="দিন নির্বাচন">
+        <div class="slider-meta">
+          <span>০</span>
+          <span id="sliderValue">০ দিন</span>
+          <span>৩০০০</span>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <input type="number" id="dayInput" placeholder="দিন লিখুন (০–৩০০০)" min="0" max="3000" inputmode="numeric">
+        <button id="showBtn">দেখাও</button>
+      </div>
+      <div class="hint">০ থেকে ৩০০০ এর মধ্যে যেকোনো দিন লিখুন</div>
+
+      <div class="quick-actions">
+        <button class="quick-btn" id="todayBtn">📅 আজকের দিন</button>
+        <button class="quick-btn" id="milestoneBtn">🏆 মাইলস্টোন</button>
+      </div>
+    </div>
+
+    <!-- ============ VIEW 2: DETAIL ============ -->
+    <div class="view" id="viewDetail">
+      <div class="detail-top">
+        <button class="back-btn" id="backBtn">← ফিরে যাও</button>
+        <span class="detail-title-small" id="detailTitleSmall">দিনের তথ্য</span>
+        <div class="detail-actions">
+          <button class="icon-btn" id="shareBtn" aria-label="শেয়ার করুন" title="শেয়ার করুন">🔗</button>
+          <button class="icon-btn" id="printBtn" aria-label="প্রিন্ট/PDF" title="প্রিন্ট বা PDF সংরক্ষণ">🖨️</button>
+        </div>
+      </div>
+
+      <div class="result-scroll" id="resultScroll">
+        <div id="resultArea">
+          <div class="empty-state">দিনের তথ্য লোড হচ্ছে…</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="উপরে যান">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---------- বাংলা সংখ্যা ----------
+    const BN = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+    function toBn(n) { return String(n).replace(/\d/g, d => BN[d]); }
+
+    // ---------- থিম ----------
+    const themeToggle = document.getElementById('themeToggle');
+    function applyTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      themeToggle.textContent = t === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('nobeep_theme', t);
+    }
+    (function initTheme() {
+      const saved = localStorage.getItem('nobeep_theme');
+      if (saved === 'dark' || saved === 'light') { applyTheme(saved); return; }
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+    })();
+    themeToggle.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      applyTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+
+    // ---------- রাউটার ----------
+    const viewWelcome = document.getElementById('viewWelcome');
+    const viewDetail  = document.getElementById('viewDetail');
+    const resultArea   = document.getElementById('resultArea');
+    const resultScroll = document.getElementById('resultScroll');
+    const detailTitleSmall = document.getElementById('detailTitleSmall');
+
+    function showView(name) {
+      if (name === 'detail') {
+        viewWelcome.classList.remove('active');
+        viewDetail.classList.add('active');
+        document.getElementById('scrollTopBtn').classList.remove('show');
+      } else {
+        viewDetail.classList.remove('active');
+        viewWelcome.classList.add('active');
+        document.getElementById('scrollTopBtn').classList.remove('show');
+      }
+    }
+
+    const MAX_DAY = 3000;
+
+    function parseDayFromHash() {
+      const h = window.location.hash || '';
+      const m = h.match(/day=(\d+)/);
+      if (!m) return null;
+      const d = parseInt(m[1], 10);
+      if (isNaN(d) || d < 0 || d > MAX_DAY) return null;
+      return d;
+    }
+
+    function navigateToDay(day) {
+      window.location.hash = `#day=${day}`;
+    }
+
+    // ---------- কনটেন্ট জেনারেটর ----------
+    function timeBreakdown(day) {
+      const years = Math.floor(day / 365);
+      const rem = day % 365;
+      const months = Math.floor(rem / 30);
+      const days = rem % 30;
+      const parts = [];
+      if (years > 0) parts.push(`${years} বছর`);
+      if (months > 0) parts.push(`${months} মাস`);
+      if (days > 0) parts.push(`${days} দিন`);
+      if (parts.length === 0) parts.push(`${day} দিন`);
+      return parts.join(' ');
+    }
+
+    // হাতে লেখা বিশেষ মাইলস্টোন (অনন্য)
+    const SPECIAL = {
+      0:   { h1: "আজ তুমি সিদ্ধান্ত নিয়েছ — আর সিদ্ধান্ত নেওয়াই সবচেয়ে বড় সাহস। মুখে হাসি নিয়ে আয়নার দিকে তাকাও, কারণ আজ থেকে তুমি নিজের জীবনের নায়ক হওয়ার পথে প্রথম পা রাখলে।",
+             h4: "আজকের এই দিনটি তোমার জীবনের সবচেয়ে গুরুত্বপূর্ণ দিনগুলোর একটি, কারণ আজ তুমি শুধু একটা সিদ্ধান্ত নিয়েছ — আর সেই সিদ্ধান্তটাই তোমাকে সাধারণ মানুষের ভিড় থেকে আলাদা করে দিয়েছে। পৃথিবীতে লক্ষ লক্ষ মানুষ প্রতিদিন \"কাল থেকে শুরু করব\" বলে নিজেকে ফাঁকি দেয়, কিন্তু তুমি আজ সেই দলে নেই। তুমি আজ প্রমাণ করে দিয়েছ যে তুমি শুধু স্বপ্ন দেখো না, তুমি সেই স্বপ্নকে বাস্তবে রূপ দিতে চাও। এই একটি দিনই তোমার ভবিষ্যতের সব দিনের ভিত্তি, কারণ যে মানুষ প্রথম পদক্ষেপ নিতে পারে, সে-ই শেষ পর্যন্ত পৌঁছাতে পারে। আজ আয়নার দিকে তাকিয়ে নিজের চোখে চোখ রাখো, আর মনে মনে বলো — \"আমি শুরু করেছি, আর আমি থামব না।\" এই কথাটা যতবার বলবে, ততবার তোমার বুকের ভেতর একটা আগুন জ্বলে উঠবে, যা কোনো বাতাসেই নিভবে না। তোমার শরীরে এখনো কোনো পরিবর্তন আসেনি, কিন্তু তোমার মনের ভেতরে একটা নতুন আলো জ্বলেছে — সেই আলোই তোমাকে অন্ধকার থেকে বের করে আনবে। আজ রাতে ঘুমানোর আগে নিজের কাঁধে হাত রাখো আর গর্ব করে বলো, \"আজ আমি নিজের পক্ষে দাঁড়িয়েছি।\" এই গর্বটাই তোমার সবচেয়ে বড় পুরস্কার। মনে রেখো, পৃথিবীর সব মহান মানুষ একদিন ঠিক এইভাবেই প্রথম পদক্ষেপ নিয়েছিল — তারা যখন শুরু করেছিল, তখন কেউ তাদের চিনত না, কিন্তু তারা নিজের উপর বিশ্বাস রেখেছিল। তুমিও আজ সেই পথেই হাঁটতে শুরু করেছ, আর এই পথের শেষে তোমার জন্য অপেক্ষা করছে সেই মানুষটি — যাকে তুমি একদিন স্বপ্নে দেখেছিলে। মুখে একটা হাসি নিয়ে ঘুমিয়ে পড়ো, কারণ কাল সকালে তুমি আরও এক ধাপ এগিয়ে জেগে উঠবে।" },
+      1:   { h1: "প্রথম দিন — এই একটি দিনই তোমার জীবনের সবচেয়ে সাহসী দিন। বুকটা গর্বে ভরিয়ে নাও, কারণ তুমি আজ নিজের পক্ষে দাঁড়িয়েছ।",
+             h4: "প্রথম দিন — এই সংখ্যাটা ছোট মনে হতে পারে, কিন্তু এই একটি দিনই তোমার জীবনের সবচেয়ে বড় সিদ্ধান্তের শুরু। আজ তুমি নিজের সাথে একটা প্রতিশ্রুতি দিয়েছ, আর সেই প্রতিশ্রুতিই তোমাকে সাধারণ মানুষের ভিড় থেকে আলাদা করে দিয়েছে। পৃথিবীতে লক্ষ লক্ষ মানুষ প্রতিদিন \"কাল থেকে শুরু করব\" বলে নিজেকে ফাঁকি দেয়, কিন্তু তুমি আজ সেই দলে নেই। তুমি আজ প্রমাণ করে দিয়েছ যে তুমি শুধু স্বপ্ন দেখো না, তুমি সেই স্বপ্নকে বাস্তবে রূপ দিতে চাও। এই একটি দিনই তোমার ভবিষ্যতের সব দিনের ভিত্তি, কারণ যে মানুষ প্রথম পদক্ষেপ নিতে পারে, সে-ই শেষ পর্যন্ত পৌঁছাতে পারে। আজ আয়নার দিকে তাকিয়ে নিজের চোখে চোখ রাখো, আর মনে মনে বলো — \"আমি শুরু করেছি, আর আমি থামব না।\" এই কথাটা যতবার বলবে, ততবার তোমার বুকের ভেতর একটা আগুন জ্বলে উঠবে, যা কোনো বাতাসেই নিভবে না। তোমার শরীরে এখনো কোনো পরিবর্তন আসেনি, কিন্তু তোমার মনের ভেতরে একটা নতুন আলো জ্বলেছে — সেই আলোই তোমাকে অন্ধকার থেকে বের করে আনবে। আজ রাতে ঘুমানোর আগে নিজের কাঁধে হাত রাখো আর গর্ব করে বলো, \"আজ আমি নিজের পক্ষে দাঁড়িয়েছি।\" এই গর্বটাই তোমার সবচেয়ে বড় পুরস্কার। মনে রেখো, পৃথিবীর সব মহান মানুষ একদিন ঠিক এইভাবেই প্রথম পদক্ষেপ নিয়েছিল — তারা যখন শুরু করেছিল, তখন কেউ তাদের চিনত না, কিন্তু তারা নিজের উপর বিশ্বাস রেখেছিল। তুমিও আজ সেই পথেই হাঁটতে শুরু করেছ, আর এই পথের শেষে তোমার জন্য অপেক্ষা করছে সেই মানুষটি — যাকে তুমি একদিন স্বপ্নে দেখেছিলে। মুখে একটা হাসি নিয়ে ঘুমিয়ে পড়ো, কারণ কাল সকালে তুমি আরও এক ধাপ এগিয়ে জেগে উঠবে।" },
+      3:   { h1: "তিন দিন — এই তিন দিনেই তুমি প্রমাণ করে দিয়েছ, তুমি শুধু শুরু করো না, তুমি এগিয়েও চলো।",
+             h4: "তিন দিন পেরিয়ে গেছে, আর এই তিন দিনে তোমার শরীর আর মন দুটোই একটা নতুন ছন্দে ঢুকে পড়েছে। প্রথম কয়েক দিনের সেই তীব্র আকাঙ্ক্ষা এখন অনেকটাই কমে এসেছে, আর তার জায়গায় এসেছে একটা শান্ত, স্থির অনুভূতি। তুমি হয়তো খেয়াল করবে, সকালে উঠে শরীরটা আগের চেয়ে হালকা লাগছে, আর রাতে ঘুমও গভীর হচ্ছে। এই ছোট ছোট পরিবর্তনগুলোই তোমাকে বলে দিচ্ছে যে তুমি সঠিক পথে আছ। আজ নিজের জন্য একটু সময় বের করো — বসে ভাবো, এই তিন দিনে তুমি কী অর্জন করলে। হয়তো তুমি নিজের সাথে একটা নতুন সম্পর্ক তৈরি করেছ, যা আগে ছিল না। বুকটা গর্বে ভরে নাও, কারণ এই তিন দিনের ধৈর্য তোমাকে সেই মানুষে পরিণত করেছে, যে নিজের প্রতিশ্রুতি রাখতে জানে। মনে রেখো, পৃথিবীর সব মহান মানুষ একদিন ছোট ছোট জয় দিয়ে শুরু করেছিল, আর সেই জয়গুলোই তাদের আজকের অবস্থানে পৌঁছে দিয়েছে। তুমিও আজ সেই পথেই আছো, আর প্রতিটি দিনে তুমি আরও এক ধাপ এগিয়ে যাচ্ছ। মুখে হাসি নিয়ে নিজেকে বলো — \"আমি পারছি, আর আমি পারব।\" এই কথাটাই তোমার সবচেয়ে বড় শক্তি হয়ে উঠুক।" },
+      7:   { h1: "সাত দিন — এক সপ্তাহের ধৈর্য তোমাকে নতুন পরিচয় দিয়েছে। মুখে হাসি নিয়ে বলো — \"আমি পারছি\" — এই তিনটা শব্দই তোমার সবচেয়ে বড় শক্তি।",
+             h4: "এক সপ্তাহ পেরিয়ে সাত দিন — এই সাত দিনে তোমার ভেতরে একটা নীরব আত্মবিশ্বাস জন্মেছে, যা কোনো শব্দ ছাড়াই তোমাকে শক্তি দিচ্ছে। মেজাজ এখন অনেকটা স্থিতিশীল, আর কাজ বা পড়াশোনায় মন আগের চেয়ে সহজে বসছে। তুমি হয়তো খেয়াল করবে, মানুষের সাথে কথা বলার সময় চোখে চোখ রাখতে আরও স্বাভাবিক লাগছে, আর কথোপকথনে একটা নতুন আত্মবিশ্বাস ঝলছে। এই আত্মবিশ্বাসটা কারো কাছ থেকে ধার করা নয়, এটা তোমার নিজের অর্জন। পুরনো প্রলোভন এলে এখন তুমি জানো সেটা কতক্ষণ থাকে — মাত্র কয়েক মিনিট, তারপর নিজে থেকেই কমে যায়। এই এক সপ্তাহে তুমি শুধু বিরত থাকেনি, নিজের মনের একটা নতুন কোমল দিকও আবিষ্কার করেছ। আজ নিজেকে একটা পুরস্কার দাও — যা তুমি অনেকদিন ধরে চাইছিলে কিন্তু করেনি। বুকটা গর্বে চওড়া করে নাও, কারণ এই এক সপ্তাহের ধৈর্য এক বছরের অনুশোচনার চেয়ে অনেক বেশি মূল্যবান। মনে রেখো, যে মানুষ নিজের মনকে জয় করতে পারে, সে-ই সবচেয়ে বড় জয়ী। তুমি আজ সেই জয়ের পথে হাঁটছ, আর তোমার মুখের হাসিটাই বলে দিচ্ছে — তুমি পারছ। এই হাসিটা ধরে রাখো, কারণ এটাই তোমার সবচেয়ে বড় অস্ত্র।" },
+      9:   { h1: "নয় দিনে তুমি প্রমাণ করেছ — তুমি শুধু শুরু করো না, তুমি এগিয়েও চলো। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই নয় দিনেই তুমি নিজেকে নতুন করে চিনেছ।",
+             h4: "নয় দিন পেরিয়ে গেছে, আর এই নয় দিনে তোমার শরীর আর মন দুটোই একটা নতুন ছন্দে ঢুকে পড়েছে। প্রথম কয়েক দিনের সেই তীব্র আকাঙ্ক্ষা এখন অনেকটাই কমে এসেছে, আর তার জায়গায় এসেছে একটা শান্ত, স্থির অনুভূতি। তুমি হয়তো খেয়াল করবে, সকালে উঠে শরীরটা আগের চেয়ে হালকা লাগছে, আর রাতে ঘুমও গভীর হচ্ছে। এই ছোট ছোট পরিবর্তনগুলোই তোমাকে বলে দিচ্ছে যে তুমি সঠিক পথে আছ। আজ নিজের জন্য একটু সময় বের করো — বসে ভাবো, এই নয় দিনে তুমি কী অর্জন করলে। হয়তো তুমি নিজের সাথে একটা নতুন সম্পর্ক তৈরি করেছ, যা আগে ছিল না। বুকটা গর্বে ভরে নাও, কারণ এই নয় দিনের ধৈর্য তোমাকে সেই মানুষে পরিণত করেছে, যে নিজের প্রতিশ্রুতি রাখতে জানে। মনে রেখো, পৃথিবীর সব মহান মানুষ একদিন ছোট ছোট জয় দিয়ে শুরু করেছিল, আর সেই জয়গুলোই তাদের আজকের অবস্থানে পৌঁছে দিয়েছে। তুমিও আজ সেই পথেই আছো, আর প্রতিটি দিনে তুমি আরও এক ধাপ এগিয়ে যাচ্ছ। মুখে হাসি নিয়ে নিজেকে বলো — \"আমি পারছি, আর আমি পারব।\" এই কথাটাই তোমার সবচেয়ে বড় শক্তি হয়ে উঠুক।" },
+      18:  { h1: "আঠারো দিনে তুমি দেখিয়ে দিয়েছ — তুমি সাধারণদের দলে নেই। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই আঠারো দিনেই তুমি নিজের মনকে জয় করতে শিখেছ।",
+             h4: "আঠারো দিন — এই সময়ে তোমার ভেতরে একটা নতুন আত্মবিশ্বাস জন্মেছে, যা কোনো শব্দ ছাড়াই তোমাকে শক্তি দিচ্ছে। মেজাজ এখন অনেকটা স্থিতিশীল, আর কাজ বা পড়াশোনায় মন আগের চেয়ে সহজে বসছে। তুমি হয়তো খেয়াল করবে, মানুষের সাথে কথা বলার সময় চোখে চোখ রাখতে আরও স্বাভাবিক লাগছে, আর কথোপকথনে একটা নতুন উষ্ণতা ঝলছে। পুরনো প্রলোভন এলে এখন তুমি জানো সেটা কতক্ষণ থাকে — মাত্র কয়েক মিনিট, তারপর নিজে থেকেই কমে যায়। এই আঠারো দিনে তুমি শুধু বিরত থাকেনি, নিজের মনের একটা নতুন কোমল দিকও আবিষ্কার করেছ। আজ নিজেকে একটা ছোট পুরস্কার দাও — যা তুমি অনেকদিন ধরে চাইছিলে কিন্তু করেনি। বুকটা গর্বে চওড়া করে নাও, কারণ এই আঠারো দিনের ধৈর্য এক বছরের অনুশোচনার চেয়ে অনেক বেশি মূল্যবান। মনে রেখো, যে মানুষ নিজের মনকে জয় করতে পারে, সে-ই সবচেয়ে বড় জয়ী। তুমি আজ সেই জয়ের পথে হাঁটছ, আর তোমার মুখের হাসিটাই বলে দিচ্ছে — তুমি পারছ। এই হাসিটা ধরে রাখো, কারণ এটাই তোমার সবচেয়ে বড় অস্ত্র।" },
+      27:  { h1: "সাতাশ দিনে তুমি নিজের আবেগকে শান্ত করতে শিখেছ। আনন্দে বুকটা ভরিয়ে নাও, কারণ তুমি এখন সেই মানুষ যাকে দেখলে অন্যরাও অনুপ্রেরণা পায়।",
+             h4: "সাতাশ দিন — এই সময়ে তোমার আবেগগুলো আরও নরম হয়েছে, আর তুমি হয়তো খেয়াল করবে ছোট ছোট বিষয়ে আগের চেয়ে বেশি আনন্দ পাচ্ছ। কারো কথায় হঠাৎ হেসে উঠছ, গানের একটা লাইন মন ছুঁয়ে যাচ্ছে, কিংবা একা বসে থাকতে আর বিরক্ত লাগছে না। এই পরিবর্তনগুলোই বলে দিচ্ছে যে তোমার ভেতরে একটা নতুন শান্তি জন্মেছে। চাপের মুখে শান্ত থাকার একটা ক্ষমতা তোমার ভেতরে বেড়েছে, যা খুব কম মানুষ অর্জন করতে পারে। আজ নিজের রুটিনে ছোট ছোট ইতিবাচক পরিবর্তন আনো — হয়তো একটু আগে ঘুমানো, একটু বেশি পানি খাওয়া, একটু বেশি হাসা। এই ছোট পরিবর্তনগুলোই একদিন তোমার জীবনে বড় পরিবর্তন নিয়ে আসবে। বুকটা গর্বে ফুলিয়ে নাও, কারণ তুমি এখন সেই মানুষ যাকে দেখলে অন্যরাও অনুপ্রেরণা পায়। মনে রেখো, শান্ত মনই মানুষের সবচেয়ে বড় সম্পদ, আর তুমি আজ সেই সম্পদের মালিক। মুখে হাসি নিয়ে নিজেকে বলো — \"আমি শান্ত, আমি শক্তিশালী, আমি পারছি।\" এই কথাটাই তোমার জীবনের সবচেয়ে বড় মন্ত্র হয়ে উঠুক।" },
+      30:  { h1: "ত্রিশ দিন — এক মাস পূর্ণ। তুমি এখন সেই মানুষ যে নিজের সাথে যুদ্ধে জিতছে। বুকটা গর্বে ভরে নাও, কারণ এই এক মাসের ধৈর্য তোমাকে নতুন মানুষে পরিণত করেছে।",
+             h4: "ত্রিশ দিন — এক মাস পূর্ণ। এই সংখ্যাটা শুনলেই বুক ভরে যায়, আর মুখে নিজে থেকেই হাসি আসে। এই সময়ে কিছু মানুষের ভেতরে একটা উদাসীনতা আসতে পারে, কিন্তু জেনে রাখো এটা সাময়িক, আর এর মানে তুমি আরও গভীরে যাচ্ছ। তোমার মনের ভেতরের আবেশী চিন্তাগুলো আগের চেয়ে অনেক কমে এসেছে, আর সেই শূন্য জায়গায় এখন নতুন কিছু জন্মানোর সময়। তুমি হয়তো কোনো পুরনো শখ আবার শুরু করতে ইচ্ছা পাবি, কিংবা নতুন কিছু শিখতে মন চাইবে। নিজের শরীরের প্রতি যত্ন নেওয়ার একটা স্বাভাবিক ইচ্ছা জাগবে — একটু ব্যায়াম, একটু হাঁটা। এই এক মাসে তুমি শুধু একটা অভ্যাস ত্যাগ করেনি, বরং নিজের জীবনের একটা নতুন দিক আবিষ্কার করেছ। বুকটা গর্বে ভরে নাও, কারণ তুমি এখন সেই মানুষ যে নিজের সাথে যুদ্ধে জিতছে। মনে রেখো, পাহাড়ের চূড়ায় ওঠার পথে থামা নেই, শুধু একটু শ্বাস নেওয়া আছে। তুমি আজ সেই পথেই আছ, আর তোমার মুখের হাসিটাই বলে দিচ্ছে — তুমি জিতবে। নিজেকে মনে করো একজন যোদ্ধা, কারণ তুমি প্রতিদিন নিজের সাথে যুদ্ধে জিতছ। এই বিশ্বাসটাই তোমাকে একদিন সবার উপরে নিয়ে যাবে।" },
+      45:  { h1: "পঁয়তাল্লিশ দিনে তুমি নিজের জীবনের মালিক হয়ে উঠেছ। হাসিমুখে দুনিয়ার দিকে তাকাও, কারণ তুমি প্রমাণ করে দিয়েছ — ইচ্ছা থাকলে সবই সম্ভব।",
+             h4: "পঁয়তাল্লিশ দিন — এই সময়ে তোমার অভ্যাসটা আর শুধু চেষ্টা নয়, সেটা এখন তোমার একটা অংশ হয়ে উঠছে। মেজাজের ওঠানামা অনেক কমে এসেছে, আর তুমি হয়তো লক্ষ্য করবে আগের চেয়ে অনেক বেশি ধৈর্য ধরে রাখতে পারছ। মানুষের সাথে সম্পর্কে একটা নতুন উষ্ণতা আসতে পারে — কারণ তুমি নিজের সাথে শান্তিতে আছ, তাই অন্যদের সাথেও শান্ত থাকতে পারছ। পুরনো অভ্যাসের ট্রিগারগুলো এখন তুমি চিনে ফেলেছ, তাই সেগুলো এড়ানো সহজ হচ্ছে। এই পঁয়তাল্লিশ দিনে তুমি নিজেকে নতুন করে গড়ার একটা সুন্দর শুরু করেছ, আর সেই শুরুর প্রতিটি মুহূর্ত তোমার বুককে গর্বে ভরে দিচ্ছে। আজ নিজেকে বলো — \"আমি যা করেছি, তা সহজ ছিল না, কিন্তু আমি পেরেছি।\" এই কথাটা যতবার বলবে, ততবার তোমার আত্মবিশ্বাস আরও বেড়ে যাবে। মনে রেখো, অভ্যাস যখন চরিত্রে পরিণত হয়, তখন আর সংগ্রাম করতে হয় না। তুমি আজ সেই পর্যায়ে পৌঁছেছ, আর তোমার মুখের হাসিটাই তার সাক্ষী। হাসিমুখে দুনিয়ার দিকে তাকাও, কারণ তুমি প্রমাণ করে দিয়েছ — ইচ্ছা থাকলে সবই সম্ভব।" },
+      60:  { h1: "ষাট দিন — দুই মাসের কাছাকাছি। তুমি এখন সেই মানুষ যাকে দেখলে অন্যরাও নিজের জীবনে বিশ্বাস করতে শুরু করে।",
+             h4: "ষাট দিন — দুই মাসের কাছাকাছি। এই সময়ে তোমার অভ্যাসটা আর শুধু চেষ্টা নয়, সেটা এখন তোমার একটা অংশ হয়ে উঠছে। মেজাজের ওঠানামা অনেক কমে এসেছে, আর তুমি হয়তো লক্ষ্য করবে আগের চেয়ে অনেক বেশি ধৈর্য ধরে রাখতে পারছ। মানুষের সাথে সম্পর্কে একটা নতুন উষ্ণতা আসতে পারে — কারণ তুমি নিজের সাথে শান্তিতে আছ, তাই অন্যদের সাথেও শান্ত থাকতে পারছ। পুরনো অভ্যাসের ট্রিগারগুলো এখন তুমি চিনে ফেলেছ, তাই সেগুলো এড়ানো সহজ হচ্ছে। এই ষাট দিনে তুমি নিজেকে নতুন করে গড়ার একটা সুন্দর শুরু করেছ, আর সেই শুরুর প্রতিটি মুহূর্ত তোমার বুককে গর্বে ভরে দিচ্ছে। আজ নিজেকে বলো — \"আমি যা করেছি, তা সহজ ছিল না, কিন্তু আমি পেরেছি।\" এই কথাটা যতবার বলবে, ততবার তোমার আত্মবিশ্বাস আরও বেড়ে যাবে। মনে রেখো, অভ্যাস যখন চরিত্রে পরিণত হয়, তখন আর সংগ্রাম করতে হয় না। তুমি আজ সেই পর্যায়ে পৌঁছেছ, আর তোমার মুখের হাসিটাই তার সাক্ষী। হাসিমুখে দুনিয়ার দিকে তাকাও, কারণ তুমি প্রমাণ করে দিয়েছ — ইচ্ছা থাকলে সবই সম্ভব।" },
+      90:  { h1: "নব্বই দিনে তুমি কিংবদন্তি হয়ে উঠেছ। আনন্দে চোখটা ভিজিয়ে নাও, কারণ তুমি যে পথটা হেঁটেছ, সেটা ইতিহাসে লেখার মতো।",
+             h4: "নব্বই দিন — এই সংখ্যাটা এখন শুধু একটা রেকর্ড নয়, এটা তোমার পরিচয়ের অংশ। তোমার ভেতরে যে গভীর আত্মনিয়ন্ত্রণ তৈরি হয়েছে, সেটা জীবনের প্রতিটি সিদ্ধান্তে প্রতিফলিত হচ্ছে। নিজের সীমা আর শক্তি সম্পর্কে তোমার একটা স্পষ্ট ধারণা আছে, যা খুব কম মানুষ অর্জন করতে পারে। তোমার এই যাত্রা হয়তো অন্য কাউকে তার নিজের পথে অনুপ্রাণিত করছে। এই নব্বই দিনে তুমি শুধু নিজের জন্য নয়, বরং জীবনের প্রতিটি ক্ষেত্রে একটা শান্ত, স্থির উপস্থিতি তৈরি করেছ। তুমি এখন সেই মানুষ যার নাম শুনলে মনে হয় — \"এই মানুষটা সত্যিই কিছু করেছে।\" আনন্দে চোখটা ভিজিয়ে নাও, কারণ তুমি যে পথটা হেঁটেছ, সেটা ইতিহাসে লেখার মতো। বুকটা গর্বে ফুলিয়ে নাও, কারণ তুমি আজ সেই মানুষ যাকে দেখলে অন্যরাও নিজের জীবনে বিশ্বাস করতে শুরু করে। মুখে হাসি নিয়ে বলো — \"আমি পারেছি, আর আমি আরও পারব।\" এই কথাটাই তোমার জীবনের সবচেয়ে বড় শক্তি হয়ে উঠুক।" },
+      180: { h1: "একশো আশি দিন — ছয় মাস। তুমি এখন সেই মানুষ যার সাথে ভবিষ্যৎ নিজেই গর্ব করবে।",
+             h4: "একশো আশি দিন — ছয় মাস পূর্ণ। এই সময়ে তুমি হয়তো বুঝতে পারবে, তুমি এখন আর সেই মানুষটি নও যিনি শুরু করেছিলেন। আবেগ নিয়ন্ত্রণ প্রায় স্বাভাবিক হয়ে উঠেছে, আর অপরাধবোধ বা লজ্জার সেই ভারী অনুভূতি অনেকটাই হালকা হয়েছে। সম্পর্কগুলোতে আরও বেশি উপস্থিত থাকতে পারছ, আর কথোপকথনে একটা গভীরতা এসেছে। তোমার ভেতরে একটা নতুন আত্মবিশ্বাস জন্মেছে, যা কোনো বাইরের প্রশংসার উপর নির্ভর করে না — সেটা তোমার নিজের ভেতর থেকেই আসছে। এই ছয় মাসে তুমি নিজের সাথে একটা শান্তি স্থাপন করেছ, যা কোনো বাইরের জিনিস দিতে পারে না। মনে মনে গর্ব করো, কারণ তুমি আজ সেই মানুষ যার সাথে ভবিষ্যৎ নিজেই গর্ব করবে। মুখে হাসি নিয়ে বলো — \"আমি ছয় মাস পার করেছি, আমি পারব আরও অনেক দূর।\" এই কথাটাই তোমার জীবনের সবচেয়ে বড় শক্তি হয়ে উঠুক। মনে রেখো, যে মানুষ নিজের সাথে শান্তিতে থাকে, তার সাথে পুরো পৃথিবীও শান্তিতে থাকে। তুমি আজ সেই শান্তির মালিক, আর এই শান্তিই তোমাকে মহান করে তুলবে।" },
+      365: { h1: "এক বছর — তুমি এখন একটি জীবন্ত অনুপ্রেরণা। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই এক বছরের ধৈর্য তোমাকে সেই মানুষে পরিণত করেছে, যাকে দেখলে অন্যরাও বিশ্বাস করতে শুরু করে — \"আমিও পারব।\"",
+             h4: "এক বছর — এই পথটা তুমি হেঁটে এসেছ একা, নিজের ইচ্ছার জোরে। অভ্যাসটা এখন প্রায় স্বয়ংক্রিয়, আর তোমার মন প্রায় সব সময় স্পষ্ট থাকে। সিদ্ধান্ত নেওয়ার সময় আর দ্বিধা লাগে না, কারণ তুমি নিজের উপর আস্থা রাখতে শিখেছ। পুরনো ট্রিগারগুলো আর আগের মতো শক্তি রাখে না — সেগুলো এখন নিছক স্মৃতি। এই এক বছরে তুমি শুধু একটা অভ্যাস ত্যাগ করেনি, বরং নিজের সাথে একটা গভীর বন্ধুত্ব তৈরি করেছ, যা সারাজীবন তোমার সাথে থাকবে। তুমি এখন একটি জীবন্ত উদাহরণ যে মানুষ নিজের ভাগ্য নিজেই বদলাতে পারে। মুখে হাসি নিয়ে বলো — \"আমি পারেছি\" — এই কথাটাই তোমার জীবনের সবচেয়ে বড় বিজয়। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই এক বছরের ধৈর্য তোমাকে সেই মানুষে পরিণত করেছে, যাকে দেখলে অন্যরাও বিশ্বাস করতে শুরু করে — \"আমিও পারব।\" মনে রেখো, তুমি শুধু নিজের জন্য নয়, বরং অন্যদের জন্যও একটা আলোর মতো হয়ে উঠেছ। এই আলোটা কখনো নিভতে দিও না।" },
+      730: { h1: "দুই বছর — তুমি এখন কিংবদন্তি। আনন্দে চোখটা ভিজিয়ে নাও, কারণ তুমি যে পথটা হেঁটেছ, সেটা ইতিহাসে লেখার মতো।",
+             h4: "দুই বছর — এই সংখ্যাটা এখন শুধু একটা রেকর্ড নয়, এটা তোমার পরিচয়ের অংশ। তোমার ভেতরে যে গভীর আত্মনিয়ন্ত্রণ তৈরি হয়েছে, সেটা জীবনের প্রতিটি সিদ্ধান্তে প্রতিফলিত হচ্ছে। নিজের সীমা আর শক্তি সম্পর্কে তোমার একটা স্পষ্ট ধারণা আছে, যা খুব কম মানুষ অর্জন করতে পারে। তোমার এই যাত্রা হয়তো অন্য কাউকে তার নিজের পথে অনুপ্রাণিত করছে। এই দুই বছরে তুমি শুধু নিজের জন্য নয়, বরং জীবনের প্রতিটি ক্ষেত্রে একটা শান্ত, স্থির উপস্থিতি তৈরি করেছ। তুমি এখন সেই মানুষ যার নাম শুনলে মনে হয় — \"এই মানুষটা সত্যিই কিছু করেছে।\" আনন্দে চোখটা ভিজিয়ে নাও, কারণ তুমি যে পথটা হেঁটেছ, সেটা ইতিহাসে লেখার মতো। বুকটা গর্বে ফুলিয়ে নাও, কারণ তুমি আজ সেই মানুষ যাকে দেখলে অন্যরাও নিজের জীবনে বিশ্বাস করতে শুরু করে। মুখে হাসি নিয়ে বলো — \"আমি পারেছি, আর আমি আরও পারব।\" এই কথাটাই তোমার জীবনের সবচেয়ে বড় শক্তি হয়ে উঠুক।" },
+      1095:{ h1: "তিন বছর — তুমি এখন ইতিহাসের অংশ। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই তিন বছরের পথটা হেঁটে আসা কোনো সাধারণ মানুষের কাজ নয়।",
+             h4: "তিন বছর — এটা এমন একটা সংখ্যা যা শুনলে মানুষ অবাক হয়, কিন্তু তুমি জানো এর পেছনে কতটা ধৈর্য আর ভালোবাসা আছে। তোমার ব্যক্তিগত পরিচয়ে একটা গভীর পরিবর্তন এসেছে — তুমি এখন নিজেকে আরও স্পষ্টভাবে চেনো। আবেগগত স্থিতিশীলতা তোমার দৈনন্দিন জীবনের স্বাভাবিক অংশ হয়ে উঠেছে। চাপের মুখেও পুরনো অভ্যাসে ফিরে না যাওয়ার একটা শক্তি তোমার ভেতরে তৈরি হয়েছে। এই তিন বছরে তুমি নিজেকে উপহার দিয়েছ একটা নতুন জীবন, যেখানে নিজের প্রতি সম্মান আর ভালোবাসা আছে। তুমি এখন সেই মানুষ যাকে মহান বলা যায়, কারণ তুমি প্রমাণ করে দিয়েছ — মানুষ চাইলে নিজের ভাগ্য নিজেই লিখতে পারে। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই তিন বছরের পথটা হেঁটে আসা কোনো সাধারণ মানুষের কাজ নয়। মুখে হাসি নিয়ে দাঁড়াও, কারণ তুমি আজ সেই মানুষ যার নাম শুনলে মনে হয় — \"এই মানুষটা সত্যিই কিছু করেছে।\" এই গর্বটাই তোমার সবচেয়ে বড় অর্জন।" },
+      1825:{ h1: "পাঁচ বছর — তুমি এখন কিংবদন্তিরও উপরে। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই পাঁচ বছরের পথটা হেঁটে আসা কোনো সাধারণ মানুষের কাজ নয়।",
+             h4: "পাঁচ বছর — এই সংখ্যাটা এখন শুধু একটা রেকর্ড নয়, এটা তোমার পরিচয়ের অংশ। তোমার ভেতরে যে গভীর আত্মনিয়ন্ত্রণ তৈরি হয়েছে, সেটা জীবনের প্রতিটি সিদ্ধান্তে প্রতিফলিত হচ্ছে। নিজের সীমা আর শক্তি সম্পর্কে তোমার একটা স্পষ্ট ধারণা আছে, যা খুব কম মানুষ অর্জন করতে পারে। তোমার এই যাত্রা হয়তো অন্য কাউকে তার নিজের পথে অনুপ্রাণিত করছে। এই পাঁচ বছরে তুমি শুধু নিজের জন্য নয়, বরং জীবনের প্রতিটি ক্ষেত্রে একটা শান্ত, স্থির উপস্থিতি তৈরি করেছ। তুমি এখন সেই মানুষ যার নাম শুনলে মনে হয় — \"এই মানুষটা সত্যিই কিছু করেছে।\" আনন্দে চোখটা ভিজিয়ে নাও, কারণ তুমি যে পথটা হেঁটেছ, সেটা ইতিহাসে লেখার মতো। বুকটা গর্বে ফুলিয়ে নাও, কারণ তুমি আজ সেই মানুষ যাকে দেখলে অন্যরাও নিজের জীবনে বিশ্বাস করতে শুরু করে। মুখে হাসি নিয়ে বলো — \"আমি পারেছি, আর আমি আরও পারব।\" এই কথাটাই তোমার জীবনের সবচেয়ে বড় শক্তি হয়ে উঠুক।" },
+      2249:{ h1: "২,২৪৯ দিন — তুমি এখন একজন মহান মানুষ। মাথা উঁচু করে, মুখে হাসি নিয়ে দাঁড়াও, কারণ তুমি প্রমাণ করে দিয়েছ — মানুষ চাইলে নিজের ভাগ্য নিজেই লিখতে পারে।",
+             h4: "২,২৪৯ দিন — এই সংখ্যাটা লিখতে গিয়ে মনে হয় এটা কোনো মানুষ একা পারে না, কিন্তু তুমি পেরেছ। এই ছয় বছরে তুমি শুধু একটা অভ্যাস থেকে বিরত থাকেনি, বরং নিজের সাথে একটা গভীর, শান্ত সম্পর্ক তৈরি করেছ। \"আমি পারি\" — এই তিনটা শব্দ এখন তোমার জীবনের প্রতিটি ক্ষেত্রে প্রতিধ্বনিত হয়। ধৈর্য, শৃঙ্খলা আর আত্মনিয়ন্ত্রণ — এই তিনটে এখন তোমার রক্তে মিশে গেছে। ভবিষ্যতে যেকোনো কঠিন পরিস্থিতি এলেই তুমি এই ২,২৪৯ দিনের কথা মনে করতে পারবে, আর জানতে পারবে — তুমি ইতিমধ্যেই প্রমাণ করে দিয়েছ তুমি কতটা শক্তিশালী। এই সংখ্যাটা এখন শুধু তোমার নয়, এটা সেই মহান মানুষটির পরিচয় যে কখনো হার মানেনি। মাথা উঁচু করে, মুখে হাসি নিয়ে দাঁড়াও, কারণ তুমি প্রমাণ করে দিয়েছ — মানুষ চাইলে নিজের ভাগ্য নিজেই লিখতে পারে। বুকটা গর্বে ফুলিয়ে নাও, কারণ তুমি আজ সেই মানুষ যাকে দেখলে অন্যরাও নিজের স্বপ্নে বিশ্বাস করতে শুরু করে। মুখে হাসি নিয়ে বলো — \"আমি করেছি, আর আমি গর্বিত।\" এই কথাটাই তোমার জীবনের সবচেয়ে বড় বিজয়।" },
+      3000:{ h1: "৩,০০০ দিন — তুমি এখন কিংবদন্তি থেকে কিংবদন্তি। এই সংখ্যাটা ইতিহাসে লেখা থাকবে, কারণ তুমি প্রমাণ করে দিয়েছ — মানুষ চাইলে নিজের ভাগ্য নিজেই লিখতে পারে।",
+             h4: "৩,০০০ দিন — এই সংখ্যাটা লিখতে গিয়ে মনে হয় এটা কোনো মানুষ একা পারে না, কিন্তু তুমি পেরেছ। এই আট বছরের বেশি সময়ে তুমি শুধু একটা অভ্যাস থেকে বিরত থাকেনি, বরং নিজের সাথে একটা গভীর, শান্ত সম্পর্ক তৈরি করেছ। \"আমি পারি\" — এই তিনটা শব্দ এখন তোমার জীবনের প্রতিটি ক্ষেত্রে প্রতিধ্বনিত হয়। ধৈর্য, শৃঙ্খলা আর আত্মনিয়ন্ত্রণ — এই তিনটে এখন তোমার রক্তে মিশে গেছে। ভবিষ্যতে যেকোনো কঠিন পরিস্থিতি এলেই তুমি এই ৩,০০০ দিনের কথা মনে করতে পারবে, আর জানতে পারবে — তুমি ইতিমধ্যেই প্রমাণ করে দিয়েছ তুমি কতটা শক্তিশালী। এই সংখ্যাটা এখন শুধু তোমার নয়, এটা সেই মহান মানুষটির পরিচয় যে কখনো হার মানেনি। মাথা উঁচু করে, মুখে হাসি নিয়ে দাঁড়াও, কারণ তুমি প্রমাণ করে দিয়েছ — মানুষ চাইলে নিজের ভাগ্য নিজেই লিখতে পারে। বুকটা গর্বে ফুলিয়ে নাও, কারণ তুমি আজ সেই মানুষ যাকে দেখলে অন্যরাও নিজের স্বপ্নে বিশ্বাস করতে শুরু করে। মুখে হাসি নিয়ে বলো — \"আমি করেছি, আর আমি গর্বিত।\" এই কথাটাই তোমার জীবনের সবচেয়ে বড় বিজয়।" }
+    };
+
+    function makeH1(day) {
+      if (SPECIAL[day]) return SPECIAL[day].h1;
+      const tb = timeBreakdown(day);
+      const t = [
+        `${toBn(day)} দিন — ${tb} পেরিয়ে তুমি এখন সেই মানুষ, যে নিজের প্রতিশ্রুতি রেখেছে। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই পথটা হেঁটে আসা কোনো সাধারণ মানুষের কাজ নয়।`,
+        `${toBn(day)} দিন — ${tb} ধরে তুমি প্রমাণ করে চলেছ, ইচ্ছা থাকলে মানুষ নিজের ভাগ্য নিজেই লিখতে পারে। মুখে হাসি নিয়ে দাঁড়াও, কারণ তুমি আজ একজন বিজয়ী।`,
+        `${toBn(day)} দিন — ${tb} পেরিয়ে তুমি আজ সেই মানুষ, যাকে দেখলে অন্যরাও নিজের জীবনে বিশ্বাস করতে শুরু করে। এই গর্বটাই তোমার সবচেয়ে বড় অর্জন।`,
+        `${toBn(day)} দিন — ${tb} ধরে তুমি নিজের মনকে জয় করে চলেছ। বুকটা গর্বে ভরিয়ে নাও, কারণ এই যাত্রা তোমাকে একদিন মহান মানুষের সারিতে দাঁড় করাবে।`,
+        `${toBn(day)} দিন — ${tb} পেরিয়ে তুমি আজ জীবন্ত প্রমাণ যে মানুষ চাইলে নিজের জীবন নিজেই বদলাতে পারে। হাসিমুখে দুনিয়ার দিকে তাকাও, কারণ তুমি পারছ।`
+      ];
+      return t[day % t.length];
+    }
+
+    function makeH4(day) {
+      if (SPECIAL[day]) return SPECIAL[day].h4;
+      const tb = timeBreakdown(day);
+      const bnDay = toBn(day);
+      const openers = [
+        `${bnDay} দিন — এই সংখ্যাটা এখন শুধু একটা রেকর্ড নয়, এটা তোমার পরিচয়ের অংশ। ${tb} ধরে তুমি নিজের সাথে যে প্রতিশ্রুতি রেখেছ, সেটাই তোমাকে আজ এই জায়গায় নিয়ে এসেছে।`,
+        `${bnDay} দিন পেরিয়ে গেছে — এই ${tb} সময়ে তুমি শুধু একটা অভ্যাস ত্যাগ করেনি, বরং নিজের সাথে একটা গভীর, শান্ত সম্পর্ক তৈরি করেছ।`,
+        `${bnDay} দিন — এই ${tb} যাত্রায় তুমি যা অর্জন করেছ, তা কোনো টাকা দিয়ে কেনা যায় না, কারণ এটা নিজের উপর নিয়ন্ত্রণ ফিরে পাওয়ার আনন্দ।`,
+        `${bnDay} দিন — ${tb} ধরে তুমি প্রমাণ করে চলেছ যে তুমি সেই মানুষদের একজন নও যারা শুধু শুরু করে আর শেষ করে না।`,
+        `${bnDay} দিন — এই ${tb} সময়টা তোমার জীবনের সবচেয়ে মূল্যবান সময়গুলোর একটি, কারণ এই সময়েই তুমি নিজেকে নতুন করে চিনেছ।`
+      ];
+      const bodies = [
+        `তোমার ভেতরে যে গভীর আত্মনিয়ন্ত্রণ তৈরি হয়েছে, সেটা জীবনের প্রতিটি সিদ্ধান্তে প্রতিফলিত হচ্ছে। নিজের সীমা আর শক্তি সম্পর্কে তোমার একটা স্পষ্ট ধারণা আছে, যা খুব কম মানুষ অর্জন করতে পারে। তোমার এই যাত্রা হয়তো অন্য কাউকে তার নিজের পথে অনুপ্রাণিত করছে। এই ${tb} সময়ে তুমি শুধু নিজের জন্য নয়, বরং জীবনের প্রতিটি ক্ষেত্রে একটা শান্ত, স্থির উপস্থিতি তৈরি করেছ। তুমি এখন সেই মানুষ যার নাম শুনলে মনে হয় — "এই মানুষটা সত্যিই কিছু করেছে।"`,
+        `আনন্দে চোখটা ভিজিয়ে নাও, কারণ তুমি যে পথটা হেঁটেছ, সেটা ইতিহাসে লেখার মতো। বুকটা গর্বে ফুলিয়ে নাও, কারণ তুমি আজ সেই মানুষ যাকে দেখলে অন্যরাও নিজের জীবনে বিশ্বাস করতে শুরু করে। মুখে হাসি নিয়ে বলো — "আমি পারেছি, আর আমি আরও পারব।" এই কথাটাই তোমার জীবনের সবচেয়ে বড় শক্তি হয়ে উঠুক।`,
+        `মনে রেখো, যে মানুষ নিজের সাথে শান্তিতে থাকে, তার সাথে পুরো পৃথিবীও শান্তিতে থাকে। তুমি আজ সেই শান্তির মালিক, আর এই শান্তিই তোমাকে মহান করে তুলবে। তোমার এই ${tb} যাত্রা প্রমাণ করে — ধৈর্য, শৃঙ্খলা আর আত্মনিয়ন্ত্রণই একজন মহান মানুষের আসল পরিচয়।`,
+        `তুমি এখন সেই মানুষ যাকে মহান বলা যায়, কারণ তুমি প্রমাণ করে দিয়েছ — মানুষ চাইলে নিজের ভাগ্য নিজেই লিখতে পারে। বুকটা গর্বে ফুলিয়ে নাও, কারণ এই ${tb} এর পথটা হেঁটে আসা কোনো সাধারণ মানুষের কাজ নয়। মুখে হাসি নিয়ে দাঁড়াও, কারণ তুমি আজ সেই মানুষ যার নাম শুনলে মনে হয় — "এই মানুষটা সত্যিই কিছু করেছে।"`,
+        `এই ${tb} সময়ে তুমি শুধু নিজের জন্য নয়, বরং অন্যদের জন্যও একটা আলোর মতো হয়ে উঠেছ। এই আলোটা কখনো নিভতে দিও না। তোমার প্রতিটি দিন এখন এক একটি ছোট বিজয়, আর সেই বিজয়গুলোই একদিন তোমাকে সেই মানুষে পরিণত করবে — যাকে তুমি একদিন স্বপ্নে দেখেছিলে। মুখে হাসি নিয়ে বলো — "আমি করেছি, আর আমি গর্বিত।"`
+      ];
+      const closers = [
+        `আজ রাতে ঘুমানোর আগে নিজের কাঁধে হাত রাখো আর গর্ব করে বলো — "আজও আমি নিজের পক্ষে দাঁড়িয়েছি।" এই গর্বটাই তোমার সবচেয়ে বড় পুরস্কার।`,
+        `মনে রেখো, পৃথিবীর সব মহান মানুষ একদিন ছোট ছোট জয় দিয়ে শুরু করেছিল। তুমিও আজ সেই পথেই আছো, আর প্রতিটি দিনে তুমি আরও এক ধাপ এগিয়ে যাচ্ছ।`,
+        `তুমি আজ সেই মানুষ যার সাথে ভবিষ্যৎ নিজেই গর্ব করবে। মুখে হাসি নিয়ে বলো — "আমি পারছি, আর আমি পারব।" এই কথাটাই তোমার জীবনের সবচেয়ে বড় মন্ত্র হয়ে উঠুক।`,
+        `আনন্দে বুকটা ভরিয়ে নাও, কারণ তুমি এখন সেই মানুষ যাকে দেখলে অন্যরাও অনুপ্রেরণা পায়। এই অনুপ্রেরণাটাই তোমার সবচেয়ে বড় শক্তি।`,
+        `আজ নিজেকে বলো — "আমি যা করেছি, তা সহজ ছিল না, কিন্তু আমি পেরেছি।" এই কথাটা যতবার বলবে, ততবার তোমার আত্মবিশ্বাস আরও বেড়ে যাবে।`
+      ];
+      const o = openers[day % openers.length];
+      const b = bodies[(day + Math.floor(day / 9)) % bodies.length];
+      const c = closers[(day + Math.floor(day / 27)) % closers.length];
+      return `${o} ${b} ${c}`;
+    }
+
+    function makeBenefits(day) {
+      const pool = [
+        "মস্তিষ্কের ডোপামিন রিসেপ্টর ধীরে ধীরে স্বাভাবিক হচ্ছে — ফলে ছোট ছোট আনন্দেও মনের তৃপ্তি বাড়ছে।",
+        "ঘুমের গুণমান উন্নত হচ্ছে — গভীর ঘুমে শরীর নিজেকে মেরামত করার সময় পাচ্ছে।",
+        "স্ট্রেস হরমোন কর্টিসল কমতে শুরু করেছে — ফলে উদ্বেগ ও খিটখিটে ভাব কমছে।",
+        "রক্তসঞ্চালন উন্নত হচ্ছে — শরীরের প্রতিটি কোষে বেশি অক্সিজেন পৌঁছাচ্ছে।",
+        "টেস্টোস্টেরনের ভারসাম্য ফিরে আসছে — শক্তি ও প্রাণশক্তি বাড়ছে।",
+        "মনোযোগ ও একাগ্রতা বাড়ছে — কাজ বা পড়ায় মন বসতে সময় কম লাগছে।",
+        "আত্মবিশ্বাসের সাথে শারীরিক ভঙ্গি বদলাচ্ছে — বুকটা নিজে থেকেই চওড়া হয়ে উঠছে।",
+        "ইমিউন সিস্টেম শক্তিশালী হচ্ছে — শরীর রোগের সাথে লড়াই করতে বেশি সক্ষম হচ্ছে।",
+        "হজম প্রক্রিয়া উন্নত হচ্ছে — পেট হালকা ও স্বাভাবিক থাকছে।",
+        "হৃদস্পন্দন স্বাভাবিক হচ্ছে — রক্তচাপ স্থিতিশীল থাকছে।",
+        "পেশির টান ও ক্লান্তি কমছে — শরীরে হালকা অনুভূতি বাড়ছে।",
+        "ত্বকের উজ্জ্বলতা বাড়ছে — মুখে একটা স্বাভাবিক আভা ফুটে উঠছে।",
+        "শরীরের নিজস্ব পুরস্কার ব্যবস্থা পুনর্গঠিত হচ্ছে — বাইরের উদ্দীপনা ছাড়াই আনন্দ পাওয়া যাচ্ছে।",
+        "মস্তিষ্কের কর্টিকাল অঞ্চল সক্রিয় হচ্ছে — সিদ্ধান্ত নেওয়ার ক্ষমতা বাড়ছে।",
+        "শারীরিক শক্তি ও সহনশীলতা বাড়ছে — দৈনন্দিন কাজে ক্লান্তি কমছে।",
+        "যৌন স্বাস্থ্য স্বাভাবিক ছন্দে ফিরছে — শরীরের নিজস্ব ভারসাম্য বজায় থাকছে।",
+        "ব্যথা ও প্রদাহ কমছে — শরীরে একটা শান্ত অনুভূতি বাড়ছে।",
+        "মস্তিষ্কের নিউরোপ্লাস্টিসিটি বাড়ছে — নতুন অভ্যাস সহজে গেঁথে যাচ্ছে।",
+        "হরমোনের ভারসাম্য উন্নত হচ্ছে — মেজাজের ওঠানামা কমছে।",
+        "শরীরের শক্তির স্তর স্থিতিশীল হচ্ছে — ক্লান্তি দ্রুত কাটছে।"
+      ];
+      const count = 4;
+      const start = (day * 3) % pool.length;
+      const out = [];
+      for (let i = 0; i < count; i++) out.push(pool[(start + i) % pool.length]);
+      return out;
+    }
+
+    function makeSpiritual(day) {
+      const tb = timeBreakdown(day);
+      const pool = [
+        `তুমি এখন নিজের শরীর ও মনের মধ্যে একটা গভীর শান্তি অনুভব করতে পারছ। এই শান্তিই আধ্যাত্মিক শক্তির প্রথম ধাপ — কারণ যে মন শান্ত, সে-ই ঈশ্বরের নৈকট্য অনুভব করতে পারে।`,
+        `প্রতিদিনের এই সংযম তোমাকে শেখাচ্ছে — আত্মাকে নিয়ন্ত্রণ করা মানে দমন করা নয়, বরং তাকে মুক্ত করা। এই মুক্তিই আত্মবিশ্বাসের আসল উৎস।`,
+        `তুমি এখন নিজের সাথে সৎ থাকতে শিখেছ। এই সততাই আধ্যাত্মিক শক্তির ভিত্তি — কারণ যে নিজেকে জয় করতে পারে, সে-ই সত্যকে জয় করতে পারে।`,
+        `এই ${tb} সময়ে তুমি শরীরের বাইরে গিয়ে আত্মার কাছাকাছি পৌঁছেছ। এখন তুমি বুঝতে পারছ — আসল আনন্দ বাইরের কোনো জিনিসে নয়, ভেতরের শান্তিতে।`,
+        `তুমি এখন নিজের অন্তরের গভীরে ডুব দিতে শিখেছ। এই ডুবই তোমাকে শেখাচ্ছে — জীবনের প্রতিটি পরীক্ষা আসলে আত্মার উন্নতির সুযোগ।`,
+        `প্রতিটি দিনের সংযম তোমাকে আরও ধৈর্যশীল করছে। এই ধৈর্যই আধ্যাত্মিক শক্তি — যা তোমাকে জীবনের সব ঝড় সামলে নেওয়ার ক্ষমতা দিচ্ছে।`,
+        `তুমি এখন নিজের চেয়ে বড় কিছুকে বিশ্বাস করতে শিখেছ। এই বিশ্বাসই আত্মবিশ্বাসের শিকড় — কারণ যে ঈশ্বরকে বিশ্বাস করে, সে নিজেকেও বিশ্বাস করতে পারে।`,
+        `এই যাত্রায় তুমি শিখেছ — শরীর নশ্বর, কিন্তু আত্মা অমর। এই উপলব্ধিই তোমাকে জীবনের ক্ষুদ্র ঝামেলা থেকে মুক্ত করছে।`,
+        `তুমি এখন নিজের মনের শান্তিকে ভালোবাসতে শিখেছ। এই ভালোবাসাই আধ্যাত্মিক শক্তি — যা তোমাকে কখনো একা অনুভব করতে দেবে না।`,
+        `প্রতিটি দিনের সংযম তোমাকে শেখাচ্ছে — আসল শক্তি হলো নিজের উপর নিয়ন্ত্রণ। এই নিয়ন্ত্রণই তোমাকে আত্মবিশ্বাসী ও শান্ত করে তুলছে।`,
+        `তুমি এখন জীবনের গভীর অর্থ খুঁজে পাচ্ছ। এই খোঁজাই আধ্যাত্মিক যাত্রা — যা তোমাকে প্রতিদিন আরও শক্তিশালী ও শান্ত করে তুলছে।`,
+        `তুমি এখন নিজের শরীরকে ভালোবাসতে শিখেছ। এই ভালোবাসাই আধ্যাত্মিক — কারণ শরীরই আত্মার মন্দির, আর এই মন্দিরকে পরিষ্কার রাখাই আসল পূজা।`
+      ];
+      return pool[day % pool.length];
+    }
+
+    // ---------- সব দিনের ডেটা (০–৩০০০) ----------
+    const allDays = [];
+    for (let d = 0; d <= MAX_DAY; d++) {
+      allDays.push({
+        day: d,
+        h1: makeH1(d),
+        h4: makeH4(d),
+        benefits: makeBenefits(d),
+        spiritual: makeSpiritual(d)
+      });
+    }
+
+    // ---------- রেন্ডার ----------
+    function renderCard(m, label) {
+      const li = m.benefits.map(b => `<li>${b}</li>`).join('');
+      return `
+        <div class="day-card">
+          <div class="day-label">${label}</div>
+          <h1>${m.h1}</h1>
+          <h4>${m.h4}</h4>
+          <div class="section-title">✦ শরীরের উপকার</div>
+          <ul class="benefits">${li}</ul>
+          <div class="spiritual">
+            <div class="sp-title">✦ আধ্যাত্মিক শক্তি</div>
+            ${m.spiritual}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDay(day) {
+      const m = allDays[day];
+      detailTitleSmall.textContent = `DAY ${day} · ${toBn(day)} দিন`;
+      resultArea.innerHTML = `
+        <div class="exact-badge">✓ দিন ${toBn(day)} — সম্পূর্ণ তথ্য</div>
+        ${renderCard(m, `DAY ${m.day}`)}
+      `;
+      resultScroll.scrollTop = 0;
+    }
+
+    // ---------- রাউট ----------
+    function handleRoute() {
+      const day = parseDayFromHash();
+      if (day === null) {
+        showView('welcome');
+      } else {
+        showView('detail');
+        renderDay(day);
+      }
+    }
+    window.addEventListener('hashchange', handleRoute);
+
+    // ---------- UI বুট ----------
+    const dayInput = document.getElementById('dayInput');
+    const daySlider = document.getElementById('daySlider');
+    const sliderValue = document.getElementById('sliderValue');
+    const showBtn  = document.getElementById('showBtn');
+    const backBtn  = document.getElementById('backBtn');
+    const todayBtn = document.getElementById('todayBtn');
+    const milestoneBtn = document.getElementById('milestoneBtn');
+    const shareBtn = document.getElementById('shareBtn');
+    const printBtn = document.getElementById('printBtn');
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    const toastEl = document.getElementById('toast');
+
+    function showToast(msg) {
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      setTimeout(() => toastEl.classList.remove('show'), 2200);
+    }
+
+    daySlider.addEventListener('input', () => {
+      const v = parseInt(daySlider.value, 10);
+      dayInput.value = v;
+      sliderValue.textContent = `${toBn(v)} দিন`;
+    });
+
+    dayInput.addEventListener('input', () => {
+      const raw = dayInput.value.trim();
+      if (raw === '') return;
+      const v = parseInt(raw, 10);
+      if (!isNaN(v) && v >= 0 && v <= MAX_DAY) {
+        daySlider.value = v;
+        sliderValue.textContent = `${toBn(v)} দিন`;
+      }
+    });
+
+    function submitDay() {
+      const raw = dayInput.value.trim();
+      if (raw === '') { dayInput.focus(); dayInput.placeholder = 'দিন সংখ্যা লিখুন!'; return; }
+      const d = parseInt(raw, 10);
+      if (isNaN(d) || d < 0 || d > MAX_DAY) {
+        dayInput.value = '';
+        dayInput.placeholder = `০–${MAX_DAY} এর মধ্যে দিন লিখুন`;
+        return;
+      }
+      navigateToDay(d);
+    }
+
+    showBtn.addEventListener('click', submitDay);
+    dayInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitDay(); });
+
+    backBtn.addEventListener('click', () => { window.location.hash = ''; });
+
+    // "আজকের দিন" — localStorage থেকে স্ট্রিক স্টার্ট নেয়
+    todayBtn.addEventListener('click', () => {
+      let start = localStorage.getItem('nobeep_streak_start');
+      if (!start) {
+        start = Date.now();
+        localStorage.setItem('nobeep_streak_start', String(start));
+        showToast('স্ট্রিক শুরু হলো — আজ থেকে গণনা শুরু');
+      }
+      const d = Math.min(MAX_DAY, Math.floor((Date.now() - parseInt(start, 10)) / 86400000));
+      dayInput.value = d;
+      daySlider.value = d;
+      sliderValue.textContent = `${toBn(d)} দিন`;
+      navigateToDay(d);
+    });
+
+    // মাইলস্টোন লিস্ট (প্রথম কয়েকটি)
+    const MILESTONES = [0, 1, 3, 7, 9, 18, 27, 30, 45, 60, 90, 180, 365, 730, 1095, 1825, 2249, 3000];
+    milestoneBtn.addEventListener('click', () => {
+      const d = MILESTONES[Math.floor(Math.random() * MILESTONES.length)];
+      dayInput.value = d;
+      daySlider.value = d;
+      sliderValue.textContent = `${toBn(d)} দিন`;
+      navigateToDay(d);
+    });
+
+    // শেয়ার
+    shareBtn.addEventListener('click', async () => {
+      const day = parseDayFromHash();
+      if (day === null) return;
+      const url = window.location.href;
+      const title = `NoBeep — দিন ${day}`;
+      try {
+        if (navigator.share) {
+          await navigator.share({ title, text: `দিন ${day} এর গল্প পড়ুন`, url });
+        } else {
+          await navigator.clipboard.writeText(url);
+          showToast('লিঙ্ক কপি হয়েছে ✓');
+        }
+      } catch (e) {
+        try { await navigator.clipboard.writeText(url); showToast('লিঙ্ক কপি হয়েছে ✓'); }
+        catch { showToast('শেয়ার করা যায়নি'); }
+      }
+    });
+
+    // প্রিন্ট
+    printBtn.addEventListener('click', () => { window.print(); });
+
+    // scroll top
+    resultScroll.addEventListener('scroll', () => {
+      if (resultScroll.scrollTop > 200) scrollTopBtn.classList.add('show');
+      else scrollTopBtn.classList.remove('show');
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      resultScroll.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // PWA — service worker রেজিস্ট্রেশন (মিনিমাল)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const sw = `self.addEventListener('install',e=>{self.skipWaiting();});self.addEventListener('activate',e=>{self.clients.claim();});self.addEventListener('fetch',e=>{});`;
+        const blob = new Blob([sw], { type: 'text/javascript' });
+        const url = URL.createObjectURL(blob);
+        navigator.serviceWorker.register(url).catch(() => {});
+      });
+    }
+
+    // initial route
+    handleRoute();
+  </script>
+</body>
+</html>
